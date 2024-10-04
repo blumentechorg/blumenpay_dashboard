@@ -1,4 +1,4 @@
-import CreateUserForm from "@/app/dashboard/User/components/CreateUserForm";
+import CreateUserForm from "@/components/CreateUserForm";
 
 export default function createUser() {
   return (

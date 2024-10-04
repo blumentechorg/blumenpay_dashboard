@@ -1,5 +1,5 @@
-import CompanyCard from "@/app/dashboard/User/components/CompanyCard";
-import Card from "@/app/dashboard/User/components/Card";
+import CompanyCard from "@/components/CompanyCard";
+import Card from "@/components/Card";
 
 export default function Companies() {
   return (

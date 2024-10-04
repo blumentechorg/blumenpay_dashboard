@@ -1,5 +1,5 @@
-import UtilitiesCard from "@/app/dashboard/User/components/UtilitiesCard";
-import UtilitiesList from "@/app/dashboard/User/components/UtilitiesList";
+import UtilitiesCard from "@/components/UtilitiesCard";
+import UtilitiesList from "@/components/UtilitiesList";
 import React from "react";
 
 export default function page() {
