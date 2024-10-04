@@ -1,4 +1,4 @@
-import MerchantCard from "@/components/MerchantCard";
+import MerchantCard from "@/app/dashboard/User/components/MerchantCard";
 
 export default function page() {
   return (

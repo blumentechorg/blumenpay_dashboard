@@ -7,7 +7,7 @@ import ThemeSwitch from "@/public/svg/navbar/ThemeSwitch";
 import CounterClock from "@/public/svg/navbar/CounterClock";
 import Bell from "@/public/svg/navbar/Bell";
 import Search from "@/themes/Search";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import Breadcrumbs from "@/app/dashboard/User/components/Breadcrumbs";
 import MobileNav from "./MobileNav";
 
 export default function Navbar() {

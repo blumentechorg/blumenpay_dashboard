@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { users } from "../api/data";
+import { users } from "../api/data"; // Ensure this path is correct
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
 import Image from "next/image";
@@ -13,23 +13,41 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state
   const router = useRouter();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); // Prevent form submission
+    setError("");
+
+    // Basic validation
+    if (!username || !password) {
+      setError("Please enter both username and password.");
+      return;
+    }
+
+    // Find the user in the hardcoded users array
     const user = users.find(
       (user) => user.username === username && user.password === password
     );
 
     if (user) {
-      Cookies.set("user", JSON.stringify(user)); // Store user in cookies
-      if (user.role === "admin") {
-        router.push("/dashboard/admin/overview");
+      setLoading(true); // Set loading to true
+      Cookies.set("user", JSON.stringify(user)); // Set user in cookies
+
+      // Redirect based on user role
+      if (user.role === "super_admin") {
+        router.push("/dashboard"); // Super admin route
+      } else if (user.role === "admin") {
+        router.push("/dashboard/admin/overview"); // Admin route
       } else {
-        router.push("/dashboard/users/overview");
+        router.push("/dashboard/user/overview"); // Regular user route
       }
     } else {
       setError("Invalid login credentials");
     }
+
+    setLoading(false); // Reset loading state after process
   };
 
   return (
@@ -40,9 +58,9 @@ const Login = () => {
         </div>
         <h2 className="text-xl font-semibold text-gray-700">Login</h2>
         <p className="mb-6 text-sm text-gray-500 text-center">
-          Please fill in your unique admin login details below
+          Please fill in your login details below
         </p>
-        <div className="w-full">
+        <form className="w-full" onSubmit={handleLogin}>
           {error && <p className="mb-4 text-red-600">{error}</p>}
           <div className="grid gap-y-4">
             <label className="font-medium">Username</label>
@@ -77,14 +95,16 @@ const Login = () => {
               Forgot Password?
             </button>
             <button
-              onClick={handleLogin}
-              className="mt-4 h-10 w-full rounded-lg bg-black text-white hover:bg-gray-800"
+              disabled={loading} // Disable button while loading
+              className={`mt-4 h-10 w-full rounded-lg ${
+                loading ? "bg-gray-400" : "bg-black"
+              } text-white hover:bg-gray-800`}
               type="submit"
             >
-              SignIn
+              {loading ? "Signing In..." : "Sign In"}
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
-import Breadcrumb from "@/components/Breadcrumb";
-import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import { useAuth } from "../../context/AuthContext";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Breadcrumb from "@/components/Breadcrumb";
 
-const AdminLayout = ({ children }) => {
+export default function SuperAdminLayout({ children }) {
   const { user } = useAuth();
   const router = useRouter();
 
-  if (!user || (user.role !== "admin" && user.role !== "super_admin")) {
+  if (!user || user.role !== "super_admin") {
     router.push("/unauthorized");
     return null;
   }
@@ -34,6 +34,4 @@ const AdminLayout = ({ children }) => {
       </div>
     </>
   );
-};
-
-export default AdminLayout;
+}

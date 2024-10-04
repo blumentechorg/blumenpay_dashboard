@@ -1,6 +1,6 @@
 import React from "react";
-import CustomerCard from "@/components/customerCard";
-import CustomerTable from "@/components/CustomerTable";
+import CustomerCard from "@/app/dashboard/User/components/customerCard";
+import CustomerTable from "@/app/dashboard/User/components/CustomerTable";
 
 export default function Customers() {
   return (

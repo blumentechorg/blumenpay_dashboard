@@ -1,6 +1,6 @@
-import Breadcrumb from "@/components/Breadcrumb";
-import Navbar from "@/components/Navbar";
-import UserSidebar from "@/components/Users/UserSidebar";
+import Breadcrumb from "@/app/dashboard/User/components/Breadcrumb";
+import Navbar from "@/app/dashboard/User/components/Navbar";
+import Sidebar from "@/app/dashboard/User/components/Sidebar";
 
 const Layout = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <div className="flex">
         {/* Sticky Sidebar */}
         <div className="flex-none border-r min-h-screen sticky top-0 md:block hidden">
-          <UserSidebar />
+          <Sidebar />
         </div>
         <div className="flex-1 flex flex-col min-h-screen">
           {/* Sticky Navbar */}
