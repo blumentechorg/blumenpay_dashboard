@@ -23,9 +23,9 @@ const Login = () => {
     if (user) {
       Cookies.set("user", JSON.stringify(user)); // Store user in cookies
       if (user.role === "admin") {
-        router.push("/dashboard/overview");
+        router.push("/dashboard/admin/overview");
       } else {
-        router.push("/dashboard/overview");
+        router.push("/dashboard/users/overview");
       }
     } else {
       setError("Invalid login credentials");

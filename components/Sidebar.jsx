@@ -58,18 +58,18 @@ export default function Sidebar() {
     },
   ];
 
-  // const coreServices = [
-  //   {
-  //     name: "Utilities",
-  //     icon: <Companies />,
-  //     link: "/dashboard/admin/coreservices/utilities",
-  //   },
-  //   {
-  //     name: "Profile",
-  //     icon: <Customers />,
-  //     link: "/dashboard/admin/coreservices/profile",
-  //   },
-  // ];
+  const coreServices = [
+    {
+      name: "Utilities",
+      icon: <Companies />,
+      link: "/dashboard/admin/coreservices/utilities",
+    },
+    {
+      name: "Profile",
+      icon: <Customers />,
+      link: "/dashboard/admin/coreservices/profile",
+    },
+  ];
 
   return (
     <>
@@ -117,7 +117,7 @@ export default function Sidebar() {
           </div>
 
           {/* Core Services */}
-          {/* <div className="space-y-2">
+          <div className="space-y-2">
             <span className="text-[#1C1C1C66] text-sm ">Core Services</span>
             <ul className="space-y-4">
               {coreServices.map((item, index) => (
@@ -131,7 +131,7 @@ export default function Sidebar() {
                 </Link>
               ))}
             </ul>
-          </div> */}
+          </div>
         </div>
 
         {/* Bottom */}

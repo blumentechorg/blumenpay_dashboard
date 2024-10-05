@@ -1,4 +1,4 @@
-import UserMerchantCard from "@/components/Admin/AdminMerchantCard";
+import UserMerchantCard from "@/components/Users/UserMerchantCard";
 
 export default function page() {
   return (

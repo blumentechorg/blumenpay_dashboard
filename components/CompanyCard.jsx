@@ -167,7 +167,7 @@ export default function CompanyCard() {
     <div className="grid lg:grid-cols-3 gap-y-5 lg:gap-y-8 pb-20 place-items-center ">
       {cardItems.map((company) => (
         <Link
-          href={"/dashboard/companies/" + company.companyid}
+          href={"/dashboard/companies/" + company.id}
           key={company.id}
           className="container grid h-96 w-full  md:w-4/5 lg:w-[320px]  place-items-center rounded-xl bg-gray-100 shadow-md py-4 gap-y-5"
         >
