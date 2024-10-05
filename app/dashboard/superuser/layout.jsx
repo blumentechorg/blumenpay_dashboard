@@ -1,6 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
-import UserSidebar from "@/components/Users/UserSidebar";
+import UserSidebar from "@/components/Admin/AdminSidebar";
 
 const Layout = ({ children }) => {
   return (

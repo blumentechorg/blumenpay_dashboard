@@ -30,12 +30,12 @@ export default function Sidebar() {
     {
       name: "Overview",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "/dashboard/users/overview",
+      link: "/dashboard/overview",
     },
     {
       name: "Customers",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "/dashboard/users/customers",
+      link: "/dashboard/customers",
     },
   ];
 
@@ -44,27 +44,32 @@ export default function Sidebar() {
     {
       name: "Companies",
       icon: <Companies />,
-      link: "/dashboard/users/companies",
+      link: "/dashboard/companies",
     },
     {
       name: "Customers",
       icon: <Customers />,
-      link: "/dashboard/users/customers",
+      link: "/dashboard/customers",
     },
     {
       name: "Merchants",
       icon: <Merchants />,
-      link: "/dashboard/users/merchants",
+      link: "/dashboard/admin/merchants",
     },
   ];
 
-  //   const coreServices = [
-  //     {
-  //       name: "Utilities",
-  //       icon: <Companies />,
-  //       link: "/dashboard/admin/coreservices/utilities",
-  //     },
-  //   ];
+  const coreServices = [
+    {
+      name: "Utilities",
+      icon: <Companies />,
+      link: "/dashboard/admin/coreservices/utilities",
+    },
+    {
+      name: "Profile",
+      icon: <Customers />,
+      link: "/dashboard/admin/coreservices/profile",
+    },
+  ];
 
   return (
     <>
@@ -112,7 +117,7 @@ export default function Sidebar() {
           </div>
 
           {/* Core Services */}
-          {/* <div className="space-y-2">
+          <div className="space-y-2">
             <span className="text-[#1C1C1C66] text-sm ">Core Services</span>
             <ul className="space-y-4">
               {coreServices.map((item, index) => (
@@ -126,13 +131,13 @@ export default function Sidebar() {
                 </Link>
               ))}
             </ul>
-          </div> */}
+          </div>
         </div>
 
         {/* Bottom */}
         <div className=" fixed bottom-0 pl-2 md:pl-0 ">
           <div className="md:px-4 pt-4  bottom-0  w-full ">
-            <div className="flex items-center lg:space-x-4 space-x-2 pb-3 md:pb-0">
+            <div className="flex items-center lg:space-x-8 space-x-2 pb-3 md:pb-0">
               <div className="flex space-x-2">
                 <Image
                   src={admin}
@@ -142,12 +147,14 @@ export default function Sidebar() {
                   height={100}
                 />
                 <div className="hidden md:block">
-                  <div className="text-xs  font-semibold">Khaliques Group</div>
-                  <div className="text-xs text-gray-400">User</div>
+                  <div className="text-sm md:text-xs lg:text-sm font-semibold">
+                    John Doe
+                  </div>
+                  <div className="text-xs text-gray-400">Admin</div>
                 </div>
               </div>
               <div>
-                <button onClick={toggleDropdown} className="">
+                <button onClick={toggleDropdown} className="text-xs ">
                   <FaChevronDown
                     className={`transition-transform h-2 w-2 ${
                       isDropdownOpen ? "rotate-180" : ""
@@ -159,7 +166,7 @@ export default function Sidebar() {
 
             {/* Dropdown for Account Options */}
             {isDropdownOpen && (
-              <div className="md:p-2 rounded text-xs ">
+              <div className="md:p-2 rounded text-xs  ">
                 <ul>
                   <li className="mb-2 md:p-2  rounded-xl flex lg:space-x-4 items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100">
                     Settings

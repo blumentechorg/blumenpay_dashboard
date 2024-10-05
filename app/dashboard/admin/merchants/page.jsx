@@ -1,10 +1,10 @@
-import MerchantCard from "@/components/MerchantCard";
+import UserMerchantCard from "@/components/Admin/AdminMerchantCard";
 
 export default function page() {
   return (
     <>
       <div>
-        <MerchantCard />
+        <UserMerchantCard />
       </div>
     </>
   );

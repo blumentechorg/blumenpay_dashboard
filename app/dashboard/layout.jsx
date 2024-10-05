@@ -1,6 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
-import AdminSidebar from "@/components/Admin/AdminSidebar";
+import Sidebar from "@/components/Sidebar";
 
 const AdminLayout = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const AdminLayout = ({ children }) => {
       <div className="flex">
         {/* Sticky Sidebar */}
         <div className="flex-none border-r min-h-screen sticky top-0 md:block hidden">
-          <AdminSidebar />
+          <Sidebar />
         </div>
         <div className="flex-1 flex flex-col min-h-screen">
           {/* Sticky Navbar */}
