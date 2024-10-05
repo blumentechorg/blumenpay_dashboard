@@ -2,7 +2,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
 import UserSidebar from "@/components/Users/UserSidebar";
 
-const Layout = ({ children }) => {
+const UserLayout = ({ children }) => {
   return (
     <>
       <div className="flex">
@@ -26,4 +26,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default UserLayout;

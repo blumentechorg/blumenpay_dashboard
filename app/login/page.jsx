@@ -16,16 +16,22 @@ const Login = () => {
   const router = useRouter();
 
   const handleLogin = () => {
+    // Find the user in the hardcoded users array
     const user = users.find(
       (user) => user.username === username && user.password === password
     );
 
     if (user) {
-      Cookies.set("user", JSON.stringify(user)); // Store user in cookies
-      if (user.role === "admin") {
-        router.push("/dashboard/admin/overview");
-      } else {
-        router.push("/dashboard/users/overview");
+      // Store user information in cookies
+      Cookies.set("user", JSON.stringify(user)); // Set user in cookies
+
+      // Redirect based on user role
+      if (user.role === "super_admin") {
+        router.push("/dashboard/super-admin/overview"); // Super admin route
+      } else if (user.role === "admin") {
+        router.push("/dashboard/admin/overview"); // Admin route
+      } else if (user.role === "user") {
+        router.push("/dashboard/user/overview"); // Regular user route
       }
     } else {
       setError("Invalid login credentials");
@@ -40,7 +46,7 @@ const Login = () => {
         </div>
         <h2 className="text-xl font-semibold text-gray-700">Login</h2>
         <p className="mb-6 text-sm text-gray-500 text-center">
-          Please fill in your unique admin login details below
+          Please fill in your login details below
         </p>
         <div className="w-full">
           {error && <p className="mb-4 text-red-600">{error}</p>}
@@ -81,7 +87,7 @@ const Login = () => {
               className="mt-4 h-10 w-full rounded-lg bg-black text-white hover:bg-gray-800"
               type="submit"
             >
-              SignIn
+              Sign In
             </button>
           </div>
         </div>

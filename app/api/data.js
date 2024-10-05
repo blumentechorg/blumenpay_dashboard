@@ -1,5 +1,18 @@
-// dummyData.js
+// data.js
 export const users = [
-  { id: 1, username: "admin", password: "admin123", role: "admin" },
-  { id: 2, username: "user1", password: "user123", role: "user" },
+  {
+    username: "super",
+    password: "super123",
+    role: "super_admin",
+  },
+  {
+    username: "admin",
+    password: "admin123",
+    role: "admin",
+  },
+  {
+    username: "user",
+    password: "user123",
+    role: "user",
+  },
 ];

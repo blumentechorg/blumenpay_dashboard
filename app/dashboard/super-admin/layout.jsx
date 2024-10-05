@@ -2,7 +2,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 
-const AdminLayout = ({ children }) => {
+const SuperAdminLayout = ({ children }) => {
   return (
     <>
       <div className="flex">
@@ -26,4 +26,4 @@ const AdminLayout = ({ children }) => {
   );
 };
 
-export default AdminLayout;
+export default SuperAdminLayout;
