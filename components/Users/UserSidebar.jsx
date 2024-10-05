@@ -30,12 +30,12 @@ export default function Sidebar() {
     {
       name: "Overview",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "/dashboard/user/overview",
+      link: "/dashboard/users/overview",
     },
     {
       name: "Customers",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "/dashboard/user/customers",
+      link: "/dashboard/users/customers",
     },
   ];
 
@@ -44,17 +44,17 @@ export default function Sidebar() {
     {
       name: "Companies",
       icon: <Companies />,
-      link: "/dashboard/user/companies",
+      link: "/dashboard/users/companies",
     },
     {
       name: "Customers",
       icon: <Customers />,
-      link: "/dashboard/user/customers",
+      link: "/dashboard/users/customers",
     },
     {
       name: "Merchants",
       icon: <Merchants />,
-      link: "/dashboard/user/merchants",
+      link: "/dashboard/users/merchants",
     },
   ];
 
