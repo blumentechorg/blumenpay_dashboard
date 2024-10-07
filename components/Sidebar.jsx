@@ -43,7 +43,7 @@ export default function Sidebar() {
   ];
 
   const dashboardItems = [
-    { name: "Overview", icon: <Overview />, link: "/dashboard/admin/overview" },
+    { name: "Overview", icon: <Overview />, link: "/dashboard/overview" },
     {
       name: "Companies",
       icon: <Companies />,

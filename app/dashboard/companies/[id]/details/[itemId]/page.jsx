@@ -15,9 +15,7 @@ const MetricDetailsPage = ({ params }) => {
   // Render your detailed view here
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-4xl font-semibold mb-8">
-        Details for Metric {itemId}
-      </h1>
+      <h1 className="text-4xl font-semibold mb-8">Details for {itemId}</h1>
       <div className="grid gap-y-4 ">
         <div>
           <Card />

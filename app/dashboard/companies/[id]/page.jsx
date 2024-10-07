@@ -272,7 +272,7 @@ export default function CompanyDetailsPage({ params }) {
     },
     6: {
       companyName: "City Med",
-      logo: <Citymed />,
+      logo: null,
       content: [
         {
           id: 1,
@@ -323,8 +323,8 @@ export default function CompanyDetailsPage({ params }) {
     },
 
     7: {
-      companyName: "City Med",
-      logo: <Citymed />,
+      companyName: "Vending Facilities",
+      logo: null,
       content: [
         {
           id: 1,
@@ -375,8 +375,8 @@ export default function CompanyDetailsPage({ params }) {
     },
 
     8: {
-      companyName: "City Med",
-      logo: <Citymed />,
+      companyName: "Facilities Management Services ",
+      logo: null,
       content: [
         {
           id: 1,
@@ -442,7 +442,7 @@ export default function CompanyDetailsPage({ params }) {
       </h1>
 
       <div className="gap-y-5 lg:gap-y-8 pb-20 place-items-center">
-        <div className="w-full rounded-xl bg-gray-100 shadow-md p-6">
+        <div className="w-full rounded-xl bg-gray-50 shadow-md p-6">
           {/* Logo */}
           <div className="flex justify-center mb-6">{selectedCompany.logo}</div>
 
