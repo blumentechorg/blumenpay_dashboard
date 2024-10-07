@@ -8,7 +8,7 @@ import Amaltech from "@/public/svg/companies/amaltech";
 import Citymed from "@/public/svg/companies/citymed";
 import Link from "next/link";
 
-export default function CompanyCard() {
+export default function CompanyCard({ params }) {
   const cardItems = [
     {
       id: 1,
@@ -161,17 +161,70 @@ export default function CompanyCard() {
         },
       ],
     },
+    {
+      id: 7,
+      companyName: "Vending Facilities",
+      logo: <Citymed />,
+      content: [
+        {
+          id: 1,
+          bgColor: "bg-yellow-100",
+          iconBgColor: "bg-[#F8E71C]",
+          icon: <Sales />,
+          amount: "N80,000",
+          description: "Sales",
+          change: "+2% this week",
+        },
+        {
+          id: 2,
+          bgColor: "bg-pink-100",
+          iconBgColor: "bg-[#BD10E0]",
+          icon: <Adduser />,
+          amount: "22",
+          description: "New Customers",
+          change: "+12% this week",
+        },
+      ],
+    },
+    {
+      id: 8,
+      companyName: "Facilities Management Services",
+      logo: <Citymed />,
+      content: [
+        {
+          id: 1,
+          bgColor: "bg-yellow-100",
+          iconBgColor: "bg-[#F8E71C]",
+          icon: <Sales />,
+          amount: "N80,000",
+          description: "Sales",
+          change: "+2% this week",
+        },
+        {
+          id: 2,
+          bgColor: "bg-pink-100",
+          iconBgColor: "bg-[#BD10E0]",
+          icon: <Adduser />,
+          amount: "22",
+          description: "New Customers",
+          change: "+12% this week",
+        },
+      ],
+    },
   ];
+
+  // Generate dynamic route based on company ID
+  const getRoute = (id) => `/dashboard/companies/${id}`;
 
   return (
     <div className="grid lg:grid-cols-3 gap-y-5 lg:gap-y-8 pb-20 place-items-center ">
       {cardItems.map((company) => (
         <Link
-          href={"/dashboard/companies/" + company.id}
+          href={getRoute(company.id)}
           key={company.id}
-          className="container grid h-96 w-full  md:w-4/5 lg:w-[320px]  place-items-center rounded-xl bg-gray-100 shadow-md py-4 gap-y-5"
+          className="container grid h-[400px] w-full  md:w-4/5 lg:w-[320px]  place-items-center rounded-xl bg-gray-100 shadow-md py-4 px-5 gap-y-5"
         >
-          <div className="lg:text-4xl md:text-2xl text-xl font-semibold tracking-wider">
+          <div className=" md:text-2xl text-xl font-semibold tracking-wider">
             {company.companyName}
           </div>
 

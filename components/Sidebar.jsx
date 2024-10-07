@@ -13,8 +13,11 @@ import Merchants from "@/public/svg/sidebar/Merchants";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa6";
 import { useState } from "react";
 import Link from "next/link";
+import { useUser } from "@/context/UserContext"; // Import the useUser hook
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function Sidebar() {
+  const { user } = useUser(); // Access user information
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -30,12 +33,12 @@ export default function Sidebar() {
     {
       name: "Overview",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "../dashboard/admin/overview",
+      link: "../dashboard/overview",
     },
     {
       name: "Customers",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "../dashboard/admin/customers",
+      link: "../dashboard/customers",
     },
   ];
 
@@ -44,17 +47,17 @@ export default function Sidebar() {
     {
       name: "Companies",
       icon: <Companies />,
-      link: "/dashboard/admin/companies",
+      link: "/dashboard/companies",
     },
     {
       name: "Customers",
       icon: <Customers />,
-      link: "/dashboard/admin/customers",
+      link: "/dashboard/customers",
     },
     {
       name: "Merchants",
       icon: <Merchants />,
-      link: "/dashboard/admin/merchants",
+      link: "/dashboard/merchants",
     },
   ];
 
@@ -62,20 +65,20 @@ export default function Sidebar() {
     {
       name: "Utilities",
       icon: <Companies />,
-      link: "/dashboard/admin/coreservices/utilities",
+      link: "/dashboard/coreservices/utilities",
     },
     {
       name: "Profile",
       icon: <Customers />,
-      link: "/dashboard/admin/coreservices/profile",
+      link: "/dashboard/coreservices/profile",
     },
   ];
 
   return (
     <>
-      <div className=" max-h-screen flex flex-col justify-between  text-gray-800">
+      <div className="max-h-screen flex flex-col justify-between text-gray-800">
         <div className="pt-10 space-y-5 px-2 md:px-5 lg:px-10 ">
-          <div className="flex justify-center  ">
+          <div className="flex justify-center">
             <Image src={logo} alt="" width={40} height={40} />
           </div>
 
@@ -117,26 +120,28 @@ export default function Sidebar() {
           </div>
 
           {/* Core Services */}
-          <div className="space-y-2">
-            <span className="text-[#1C1C1C66] text-sm ">Core Services</span>
-            <ul className="space-y-4">
-              {coreServices.map((item, index) => (
-                <Link key={index} href={item.link}>
-                  <li className="flex space-x-2 text-sm items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 p-2 rounded-xl">
-                    <span className="hover:scale-110 transition-transform duration-200">
-                      {item.icon}
-                    </span>
-                    <span className="">{item.name}</span>
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
+          {(user?.role === "admin" || user?.role === "super_admin") && ( // Check if user is admin or super_admin
+            <div className="space-y-2">
+              <span className="text-[#1C1C1C66] text-sm ">Core Services</span>
+              <ul className="space-y-4">
+                {coreServices.map((item, index) => (
+                  <Link key={index} href={item.link}>
+                    <li className="flex space-x-2 text-sm items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 p-2 rounded-xl">
+                      <span className="hover:scale-110 transition-transform duration-200">
+                        {item.icon}
+                      </span>
+                      <span className="">{item.name}</span>
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Bottom */}
-        <div className=" fixed bottom-0 pl-2 md:pl-0 ">
-          <div className="md:px-4 pt-4  bottom-0  w-full ">
+        <div className="fixed bottom-0 pl-2 md:pl-0 ">
+          <div className="md:px-4 pt-4 bottom-0 w-full ">
             <div className="flex items-center lg:space-x-8 space-x-2 pb-3 md:pb-0">
               <div className="flex space-x-2">
                 <Image
@@ -148,9 +153,12 @@ export default function Sidebar() {
                 />
                 <div className="hidden md:block">
                   <div className="text-sm md:text-xs lg:text-sm font-semibold">
-                    John Doe
+                    {user?.username || "John Doe"}{" "}
+                    {/* Display user name from context */}
                   </div>
-                  <div className="text-xs text-gray-400">Admin</div>
+                  <div className="text-xs text-gray-400">
+                    {user?.role || "Admin"}
+                  </div>
                 </div>
               </div>
               <div>

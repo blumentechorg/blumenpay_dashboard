@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { users } from "../api/data";
+import { users } from "../api/data"; // Assuming this is where the hardcoded users are
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useState } from "react";
 import Image from "next/image";
@@ -24,15 +24,7 @@ const Login = () => {
     if (user) {
       // Store user information in cookies
       Cookies.set("user", JSON.stringify(user)); // Set user in cookies
-
-      // Redirect based on user role
-      if (user.role === "super_admin") {
-        router.push("/dashboard/super-admin/overview"); // Super admin route
-      } else if (user.role === "admin") {
-        router.push("/dashboard/admin/overview"); // Admin route
-      } else if (user.role === "user") {
-        router.push("/dashboard/user/overview"); // Regular user route
-      }
+      router.push("/dashboard/overview"); // Redirect all users to a general dashboard page
     } else {
       setError("Invalid login credentials");
     }
