@@ -6,6 +6,7 @@ import Customers from "@/public/svg/customers/customer";
 import Algorizmih from "@/public/svg/companies/algorizmih";
 import Goalpass from "@/public/svg/companies/goalpass";
 import Amaltech from "@/public/svg/companies/amaltech";
+import { HiArrowLongLeft } from "react-icons/hi2";
 import Citymed from "@/public/svg/companies/citymed";
 import Link from "next/link"; // Import Next.js Link
 
@@ -436,7 +437,13 @@ export default function CompanyDetailsPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container  mx-auto py-10">
+      <Link href="/dashboard/companies/" className="flex text-sm space-x-2">
+        <button>
+          <HiArrowLongLeft className="w-5 h-5" />
+        </button>
+        <div>Back</div>
+      </Link>
       <h1 className="text-4xl font-semibold mb-8">
         {selectedCompany.companyName}
       </h1>
@@ -444,7 +451,7 @@ export default function CompanyDetailsPage({ params }) {
       <div className="gap-y-5 lg:gap-y-8 pb-20 place-items-center">
         <div className="w-full rounded-xl bg-gray-50 shadow-md p-6">
           {/* Logo */}
-          <div className="flex justify-center mb-6">{selectedCompany.logo}</div>
+          {/* <div className="flex justify-center mb-6">{selectedCompany.logo}</div> */}
 
           {/* Sales and Customer Info */}
           <div className="flex flex-wrap gap-4">
