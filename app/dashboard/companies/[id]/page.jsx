@@ -1,13 +1,10 @@
 // app/dashboard/companies/[id]/page.jsx
 import Aimedicare from "@/public/svg/companies/aimedicare";
-import Sales from "@/public/svg/sales";
-import Adduser from "@/public/svg/adduser";
 import Customers from "@/public/svg/customers/customer";
 import Algorizmih from "@/public/svg/companies/algorizmih";
 import Goalpass from "@/public/svg/companies/goalpass";
 import Amaltech from "@/public/svg/companies/amaltech";
 import { HiArrowLongLeft } from "react-icons/hi2";
-import Citymed from "@/public/svg/companies/citymed";
 import Link from "next/link"; // Import Next.js Link
 
 export default function CompanyDetailsPage({ params }) {
@@ -16,160 +13,6 @@ export default function CompanyDetailsPage({ params }) {
   // Sample data for the companies
   const companyData = {
     1: {
-      companyName: "AI Medicare",
-      logo: <Aimedicare />,
-      content: [
-        {
-          id: 1,
-          bgColor: "bg-yellow-100",
-          iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
-        },
-        {
-          id: 2,
-          bgColor: "bg-pink-100",
-          iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
-        },
-        {
-          id: 3,
-          bgColor: "bg-blue-100",
-          iconBgColor: "bg-[#50E3C2]",
-          icon: <Customers />,
-          amount: "500",
-          description: "Active Customers",
-          change: "+5% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N120,000",
-          description: "Revenue",
-          change: "+10% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "15%",
-          description: "Return Rate",
-          change: "-3% this month",
-        },
-      ],
-    },
-    2: {
-      companyName: "Algorizmih",
-      logo: <Algorizmih />,
-      content: [
-        {
-          id: 1,
-          bgColor: "bg-yellow-100",
-          iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
-        },
-        {
-          id: 2,
-          bgColor: "bg-pink-100",
-          iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
-        },
-        {
-          id: 3,
-          bgColor: "bg-blue-100",
-          iconBgColor: "bg-[#50E3C2]",
-          icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
-        },
-      ],
-    },
-
-    3: {
-      companyName: "Goal Pass",
-      logo: <Goalpass />,
-      content: [
-        {
-          id: 1,
-          bgColor: "bg-yellow-100",
-          iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
-        },
-        {
-          id: 2,
-          bgColor: "bg-pink-100",
-          iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
-        },
-        {
-          id: 3,
-          bgColor: "bg-blue-100",
-          iconBgColor: "bg-[#50E3C2]",
-          icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
-        },
-      ],
-    },
-    4: {
       companyName: "ERP Software",
       logo: null,
       content: [
@@ -177,256 +20,144 @@ export default function CompanyDetailsPage({ params }) {
           id: 1,
           bgColor: "bg-yellow-100",
           iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
+          icon: <Customers />,
+          name: "Khaliques Group",
+          projects: [
+            "Yanna Apartments",
+            "Khaliques Global",
+            "Village Restaurant",
+            "Spa",
+            "Gym",
+          ],
+        },
+        {
+          id: 2,
+          bgColor: "bg-pink-100",
+          iconBgColor: "bg-[#BD10E1]",
+          icon: <Customers />,
+          name: "Khaliques Group",
+          projects: [
+            "Yanna Apartments",
+            "Khaliques Global",
+            "Village Restaurant",
+            "Spa",
+            "Gym",
+          ],
+        },
+      ],
+    },
+    2: {
+      companyName: "Blumen MarketPlace",
+      logo: null,
+      content: [
+        {
+          id: 1,
+          bgColor: "bg-yellow-100",
+          iconBgColor: "bg-[#F8E71C]",
+          icon: <Customers />,
+          name: "Amaltech Store",
+          projects: ["Blumen ERP Integration", "Blumen Data Analytics"],
         },
         {
           id: 2,
           bgColor: "bg-pink-100",
           iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
+          icon: <Customers />,
+          name: "Squid Energy Store",
+          projects: ["Squid Inventory Management"],
         },
         {
           id: 3,
           bgColor: "bg-blue-100",
           iconBgColor: "bg-[#50E3C2]",
           icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
+          name: "Switch Box Store",
+          projects: ["Switch Box Optimization"],
         },
         {
           id: 4,
           bgColor: "bg-green-100",
           iconBgColor: "bg-[#7ED321]",
           icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
+          name: "Jetson Store",
+          projects: ["Jetson Payment Gateway"],
+        },
+      ],
+    },
+    3: {
+      companyName: "Facilities Management Services",
+      logo: null,
+      content: [
+        {
+          id: 1,
+          bgColor: "bg-yellow-100",
+          iconBgColor: "bg-[#F8E71C]",
+          icon: <Customers />,
+          name: "Jetson Store",
+          projects: ["Jetson Facility Maintenance", "Jetson Logistics"],
+        },
+      ],
+    },
+    4: {
+      companyName: "Vending Machines",
+      logo: null,
+      content: [
+        {
+          id: 1,
+          bgColor: "bg-yellow-100",
+          iconBgColor: "bg-[#F8E71C]",
+          icon: <Customers />,
+          name: "Band Project and Property",
+          projects: ["Band Property Setup", "Vending Operations"],
         },
         {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
+          id: 2,
+          bgColor: "bg-pink-100",
+          iconBgColor: "bg-[#BD10E0]",
+          icon: <Customers />,
+          name: "Amd Facilities",
+          projects: ["Facility Management", "Amd Project Renovation"],
+        },
+        {
+          id: 3,
+          bgColor: "bg-blue-100",
+          iconBgColor: "bg-[#50E3C2]",
+          icon: <Customers />,
+          name: "Brave Rock Estate",
+          projects: ["Brave Rock Expansion", "Brave Rock Security Enhancement"],
         },
       ],
     },
     5: {
-      companyName: "AmalTech Store",
-      logo: <Amaltech />,
-      content: [
-        {
-          id: 1,
-          bgColor: "bg-yellow-100",
-          iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
-        },
-        {
-          id: 2,
-          bgColor: "bg-pink-100",
-          iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
-        },
-        {
-          id: 3,
-          bgColor: "bg-blue-100",
-          iconBgColor: "bg-[#50E3C2]",
-          icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
-        },
-      ],
-    },
-    6: {
-      companyName: "City Med",
+      companyName: "Goal Pass",
       logo: null,
       content: [
         {
           id: 1,
           bgColor: "bg-yellow-100",
           iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
+          icon: <Customers />,
+          name: "Band Project and Property",
+          projects: ["Band Property Setup", "Vending Operations"],
         },
         {
           id: 2,
           bgColor: "bg-pink-100",
           iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
+          icon: <Customers />,
+          name: "Amd Facilities",
+          projects: ["Facility Management", "Amd Project Renovation"],
         },
         {
           id: 3,
           bgColor: "bg-blue-100",
           iconBgColor: "bg-[#50E3C2]",
           icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
+          name: "Brave Rock Estate",
+          projects: ["Brave Rock Expansion", "Brave Rock Security Enhancement"],
         },
       ],
     },
-
-    7: {
-      companyName: "Vending Facilities",
-      logo: null,
-      content: [
-        {
-          id: 1,
-          bgColor: "bg-yellow-100",
-          iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
-        },
-        {
-          id: 2,
-          bgColor: "bg-pink-100",
-          iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
-        },
-        {
-          id: 3,
-          bgColor: "bg-blue-100",
-          iconBgColor: "bg-[#50E3C2]",
-          icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
-        },
-      ],
-    },
-
-    8: {
-      companyName: "Facilities Management Services ",
-      logo: null,
-      content: [
-        {
-          id: 1,
-          bgColor: "bg-yellow-100",
-          iconBgColor: "bg-[#F8E71C]",
-          icon: <Sales />,
-          amount: "N80,000",
-          description: "Sales",
-          change: "+2% this week",
-        },
-        {
-          id: 2,
-          bgColor: "bg-pink-100",
-          iconBgColor: "bg-[#BD10E0]",
-          icon: <Adduser />,
-          amount: "22",
-          description: "New Customers",
-          change: "+12% this week",
-        },
-        {
-          id: 3,
-          bgColor: "bg-blue-100",
-          iconBgColor: "bg-[#50E3C2]",
-          icon: <Customers />,
-          amount: "320",
-          description: "Active Customers",
-          change: "+8% this month",
-        },
-        {
-          id: 4,
-          bgColor: "bg-green-100",
-          iconBgColor: "bg-[#7ED321]",
-          icon: <Customers />,
-          amount: "N200,000",
-          description: "Revenue",
-          change: "+15% this quarter",
-        },
-        {
-          id: 5,
-          bgColor: "bg-red-100",
-          iconBgColor: "bg-[#D0021B]",
-          icon: <Sales />,
-          amount: "10%",
-          description: "Return Rate",
-          change: "-5% this month",
-        },
-      ],
-    },
-    // Add more companies as needed
   };
 
   // Get the selected company data based on the URL ID
@@ -437,41 +168,41 @@ export default function CompanyDetailsPage({ params }) {
   }
 
   return (
-    <div className="container  mx-auto py-10">
-      <Link href="/dashboard/companies/" className="flex text-sm space-x-2">
-        <button>
+    <div className="container mx-auto py-10">
+      <Link href="/dashboard/companies/" className=" ">
+        <button className="hover:scale-110 transition-transform duration-200 flex text-sm space-x-2">
           <HiArrowLongLeft className="w-5 h-5" />
+          <div>Back</div>
         </button>
-        <div>Back</div>
       </Link>
       <h1 className="text-4xl font-semibold mb-8">
         {selectedCompany.companyName}
       </h1>
 
-      <div className="gap-y-5 lg:gap-y-8 pb-20 place-items-center">
+      <div className="gap-y-5 lg:gap-y-8 pb-24 place-items-center">
         <div className="w-full rounded-xl bg-gray-50 shadow-md p-6">
-          {/* Logo */}
-          {/* <div className="flex justify-center mb-6">{selectedCompany.logo}</div> */}
-
-          {/* Sales and Customer Info */}
+          {/* Displaying company content */}
           <div className="flex flex-wrap gap-4">
             {selectedCompany.content.map((item) => (
               <Link
                 key={item.id}
                 href={`/dashboard/companies/${id}/details/${item.id}`}
+                className={`p-4 rounded-lg ${item.bgColor} shadow-md w-[230px]  hover:cursor-pointer hover:shadow-lg`}
               >
                 <div
-                  className={`p-4 rounded-lg ${item.bgColor} shadow-md w-[230px] hover:cursor-pointer hover:shadow-lg`}
+                  className={`mb-4 ${item.iconBgColor} p-2 h-8 w-8 rounded-full`}
                 >
-                  <div
-                    className={`mb-4 ${item.iconBgColor} p-2 h-8 w-8 rounded-full`}
-                  >
-                    {item.icon}
-                  </div>
-                  <div className="text-lg font-semibold">{item.amount}</div>
-                  <div className="text-sm">{item.description}</div>
-                  <div className="text-xs text-gray-500">{item.change}</div>
+                  {item.icon}
                 </div>
+                <div className="font-semibold">{item.name}</div>
+                {/* List of projects */}
+                <ul className="mt-2 text-sm">
+                  {item.projects.map((project, index) => (
+                    <li key={index} className="list-disc ml-4">
+                      {project}
+                    </li>
+                  ))}
+                </ul>
               </Link>
             ))}
           </div>

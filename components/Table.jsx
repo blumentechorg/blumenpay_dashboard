@@ -62,7 +62,7 @@ const TransactionTable = () => {
   ];
 
   return (
-    <div className="mb-36 w-full  md:px-5 py-5 px-2 bg-gray-50 rounded-xl shadow-md">
+    <div className="mb-36 w-full  md:px-5 py-5 px-2 bg-gray-50 hover:cursor-pointer hover:shadow-lg rounded-xl shadow-md">
       <div className="overflow-x-auto bg-[#F7F9FB] rounded-xl px-3 py-5">
         <div className="text-[#05004E] font-semibold text-base px-4">
           Recent Transactions

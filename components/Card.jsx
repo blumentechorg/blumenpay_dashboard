@@ -8,7 +8,7 @@ const CardComponent = ({ cardData }) => {
       {cardData.map((card, index) => (
         <div
           key={index}
-          className={`p-5   rounded-xl  shadow-md items-center  ${card.bgColor}`}
+          className={`p-5   rounded-xl  shadow-md items-center hover:cursor-pointer hover:shadow-lg ${card.bgColor}`}
           style={{ ...card.customStyles }}
         >
           <div className="">{card.title}</div>

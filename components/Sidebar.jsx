@@ -77,16 +77,16 @@ export default function Sidebar() {
   return (
     <>
       <div className="max-h-screen flex flex-col justify-between text-gray-800">
-        <div className="pt-10 space-y-5 px-2 md:px-5 lg:px-10 ">
+        <div className="sticky top-0 max-h-screen overflow-y-auto pt-10 space-y-5 px-2 md:px-5 lg:px-10">
           <div className="flex justify-center">
             <Image src={logo} alt="" width={40} height={40} />
           </div>
 
           {/* Favorites */}
           <div className="space-y-4">
-            <div className="flex text-sm space-x-3 ">
-              <span className="text-[#1C1C1C66] ">Favorites</span>
-              <span className="text-gray-300 ">Recently</span>
+            <div className="flex text-sm space-x-3">
+              <span className="text-[#1C1C1C66]">Favorites</span>
+              <span className="text-gray-300">Recently</span>
             </div>
             <ul>
               {favorites.map((item, index) => (
@@ -104,7 +104,7 @@ export default function Sidebar() {
 
           {/* Dashboard */}
           <div className="space-y-2">
-            <span className="text-[#1C1C1C66] text-sm ">Dashboard</span>
+            <span className="text-[#1C1C1C66] text-sm">Dashboard</span>
             <ul className="space-y-4">
               {dashboardItems.map((item, index) => (
                 <Link href={item.link} key={index}>
@@ -120,9 +120,9 @@ export default function Sidebar() {
           </div>
 
           {/* Core Services */}
-          {(user?.role === "admin" || user?.role === "super_admin") && ( // Check if user is admin or super_admin
+          {(user?.role === "admin" || user?.role === "super_admin") && (
             <div className="space-y-2">
-              <span className="text-[#1C1C1C66] text-sm ">Core Services</span>
+              <span className="text-[#1C1C1C66] text-sm">Core Services</span>
               <ul className="space-y-4">
                 {coreServices.map((item, index) => (
                   <Link key={index} href={item.link}>
@@ -140,8 +140,8 @@ export default function Sidebar() {
         </div>
 
         {/* Bottom */}
-        <div className="fixed bottom-0 pl-2 md:pl-0 ">
-          <div className="md:px-4 pt-4 bottom-0 w-full ">
+        <div className="fixed bottom-0 pl-2 md:pl-0">
+          <div className="md:px-4 pt-4 bottom-0 w-full">
             <div className="flex items-center lg:space-x-8 space-x-2 pb-3 md:pb-0">
               <div className="flex space-x-2">
                 <Image
@@ -153,8 +153,7 @@ export default function Sidebar() {
                 />
                 <div className="hidden md:block">
                   <div className="text-sm md:text-xs lg:text-sm font-semibold">
-                    {user?.username || "John Doe"}{" "}
-                    {/* Display user name from context */}
+                    {user?.username || "John Doe"}
                   </div>
                   <div className="text-xs text-gray-400">
                     {user?.role || "Admin"}
@@ -162,7 +161,7 @@ export default function Sidebar() {
                 </div>
               </div>
               <div>
-                <button onClick={toggleDropdown} className="text-xs ">
+                <button onClick={toggleDropdown} className="text-xs">
                   <FaChevronDown
                     className={`transition-transform h-2 w-2 ${
                       isDropdownOpen ? "rotate-180" : ""
@@ -174,9 +173,9 @@ export default function Sidebar() {
 
             {/* Dropdown for Account Options */}
             {isDropdownOpen && (
-              <div className="md:p-2 rounded text-xs  ">
+              <div className="md:p-2 rounded text-xs">
                 <ul>
-                  <li className="mb-2 md:p-2  rounded-xl flex lg:space-x-4 items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100">
+                  <li className="mb-2 md:p-2 rounded-xl flex lg:space-x-4 items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100">
                     Settings
                   </li>
                   <Link href="/">
@@ -189,7 +188,7 @@ export default function Sidebar() {
             )}
           </div>
 
-          <div className="flex md:justify-center  mg mb-4">
+          <div className="flex md:justify-center mg mb-4">
             <Image
               src={logo2}
               alt="Avatar"

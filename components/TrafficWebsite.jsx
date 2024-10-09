@@ -10,7 +10,7 @@ export default function TrafficWebsite() {
 
   return (
     <div>
-      <div className="px-7 text-sm  py-10 space-y-5 w-[345px] md:w-[550px] lg:w-[300px] h-[385px]  bg-gray-50 font-light rounded-xl  shadow-md">
+      <div className="px-7 text-sm  py-10 space-y-5 w-[345px] md:w-[550px] lg:w-[300px] h-[385px]  bg-gray-50 font-light rounded-xl  shadow-md hover:cursor-pointer hover:shadow-lg">
         <div className="font-semibold">Traffic by Website</div>
 
         {websites.map((website, index) => (
