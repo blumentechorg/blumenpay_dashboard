@@ -9,7 +9,7 @@ export function middleware(req) {
   const user = token ? JSON.parse(token?.value || "{}") : {};
 
   // If user is not logged in and tries to access dashboard pages
-  if (!user?.role && pathname.startsWith("/dashboard/overview")) {
+  if (!user?.role && pathname.startsWith("/dashboard")) {
     // Redirect to login page if user is not authenticated
     return NextResponse.redirect(new URL("/login", req.url));
   }

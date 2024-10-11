@@ -13,11 +13,14 @@ import Merchants from "@/public/svg/sidebar/Merchants";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa6";
 import { useState } from "react";
 import Link from "next/link";
-import { useUser } from "@/context/UserContext"; // Import the useUser hook
-import ProtectedRoute from "./ProtectedRoute";
+import { useAuth } from "@/context/AuthContext"; // Import the useUser hook
+import ProtectedRoute from "./Auth/ProtectedRoute";
+import LogoutButton from "./Auth/LogoutButton";
+import { useRouter } from "next/navigation";
 
 export default function Sidebar() {
-  const { user } = useUser(); // Access user information
+  const { user, logout } = useAuth(); // Add logout to the destructured values
+  const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -74,53 +77,59 @@ export default function Sidebar() {
     },
   ];
 
+  const handleLogout = () => {
+    logout();
+    router.push("/"); // Redirect to home page after logout
+  };
+
   return (
     <>
-      <div className="max-h-screen flex flex-col justify-between text-gray-800">
-        <div className="sticky top-0 max-h-screen overflow-y-auto pt-10 space-y-5 px-2 md:px-5 lg:px-10">
-          <div className="flex justify-center">
-            <Image src={logo} alt="" width={40} height={40} />
-          </div>
-
-          {/* Favorites */}
-          <div className="space-y-4">
-            <div className="flex text-sm space-x-3">
-              <span className="text-[#1C1C1C66]">Favorites</span>
-              <span className="text-gray-300">Recently</span>
+      <ProtectedRoute>
+        <div className="h-screen flex flex-col justify-between text-gray-800 sticky top-0">
+          <div className="flex-grow overflow-y-auto pt-10 space-y-5 px-2 md:px-5 lg:px-10">
+            <div className="flex justify-center">
+              <Image src={logo} alt="" width={40} height={40} />
             </div>
-            <ul>
-              {favorites.map((item, index) => (
-                <Link href={item.link} key={index}>
-                  <li className="flex space-x-2 text-sm items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 p-2 rounded-xl">
-                    <span className="hover:scale-110 transition-transform duration-200">
-                      {item.icon}
-                    </span>
-                    <span className="">{item.name}</span>
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
 
-          {/* Dashboard */}
-          <div className="space-y-2">
-            <span className="text-[#1C1C1C66] text-sm">Dashboard</span>
-            <ul className="space-y-4">
-              {dashboardItems.map((item, index) => (
-                <Link href={item.link} key={index}>
-                  <li className="flex space-x-2 text-sm items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 p-2 rounded-xl">
-                    <span className="hover:scale-110 transition-transform duration-200">
-                      {item.icon}
-                    </span>
-                    <span className="">{item.name}</span>
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
+            {/* Favorites */}
+            <div className="space-y-4">
+              <div className="flex text-sm space-x-3">
+                <span className="text-[#1C1C1C66]">Favorites</span>
+                <span className="text-gray-300">Recently</span>
+              </div>
+              <ul>
+                {favorites.map((item, index) => (
+                  <Link href={item.link} key={index}>
+                    <li className="flex space-x-2 text-sm items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 p-2 rounded-xl">
+                      <span className="hover:scale-110 transition-transform duration-200">
+                        {item.icon}
+                      </span>
+                      <span className="">{item.name}</span>
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
 
-          {/* Core Services */}
-          {(user?.role === "admin" || user?.role === "super_admin") && (
+            {/* Dashboard */}
+            <div className="space-y-2">
+              <span className="text-[#1C1C1C66] text-sm">Dashboard</span>
+              <ul className="space-y-4">
+                {dashboardItems.map((item, index) => (
+                  <Link href={item.link} key={index}>
+                    <li className="flex space-x-2 text-sm items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 p-2 rounded-xl">
+                      <span className="hover:scale-110 transition-transform duration-200">
+                        {item.icon}
+                      </span>
+                      <span className="">{item.name}</span>
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+
+            {/* Core Services */}
+            {/* {(user?.role === "admin" || user?.role === "super_admin") && ( */}
             <div className="space-y-2">
               <span className="text-[#1C1C1C66] text-sm">Core Services</span>
               <ul className="space-y-4">
@@ -136,69 +145,71 @@ export default function Sidebar() {
                 ))}
               </ul>
             </div>
-          )}
-        </div>
+            {/* // )} */}
+          </div>
 
-        {/* Bottom */}
-        <div className="fixed bottom-0 pl-2 md:pl-0">
-          <div className="md:px-4 pt-4 bottom-0 w-full">
-            <div className="flex items-center lg:space-x-8 space-x-2 pb-3 md:pb-0">
-              <div className="flex space-x-2">
-                <Image
-                  src={admin}
-                  alt="Avatar"
-                  className="md:w-10 md:h-10 w-7 h-7 rounded-full"
-                  width={100}
-                  height={100}
-                />
-                <div className="hidden md:block">
-                  <div className="text-sm md:text-xs lg:text-sm font-semibold">
-                    {user?.username || "John Doe"}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {user?.role || "Admin"}
+          {/* Bottom */}
+          <div className="px-2 md:px-5 pb-4">
+            <div className="md:px-4 pt-4 w-full">
+              <div className="flex items-center lg:space-x-8 space-x-2 pb-3 md:pb-0">
+                <div className="flex space-x-2">
+                  <Image
+                    src={admin}
+                    alt="Avatar"
+                    className="md:w-10 md:h-10 w-7 h-7 rounded-full"
+                    width={100}
+                    height={100}
+                  />
+                  <div className="hidden md:block">
+                    <div className="text-sm md:text-xs lg:text-sm font-semibold">
+                      {user?.username || "John Doe"}
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      {user?.role || "Admin"}
+                    </div>
                   </div>
                 </div>
+                <div>
+                  <button onClick={toggleDropdown} className="text-xs">
+                    <FaChevronDown
+                      className={`transition-transform h-2 w-2 ${
+                        isDropdownOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </div>
               </div>
-              <div>
-                <button onClick={toggleDropdown} className="text-xs">
-                  <FaChevronDown
-                    className={`transition-transform h-2 w-2 ${
-                      isDropdownOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-              </div>
-            </div>
 
-            {/* Dropdown for Account Options */}
-            {isDropdownOpen && (
-              <div className="md:p-2 rounded text-xs">
-                <ul>
-                  <li className="mb-2 md:p-2 rounded-xl flex lg:space-x-4 items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100">
-                    Settings
-                  </li>
-                  <Link href="/">
+              {/* Dropdown for Account Options */}
+              {isDropdownOpen && (
+                <div className="md:p-2 rounded text-xs">
+                  <ul>
                     <li className="mb-2 md:p-2 rounded-xl flex lg:space-x-4 items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100">
+                      Settings
+                    </li>
+                    <li
+                      onClick={handleLogout}
+                      className="mb-2 md:p-2 rounded-xl flex lg:space-x-4 items-center transition-transform transform hover:translate-x-2 hover:bg-gray-100 cursor-pointer"
+                    >
                       Logout
                     </li>
-                  </Link>
-                </ul>
-              </div>
-            )}
-          </div>
+                  </ul>
+                </div>
+              )}
+            </div>
 
-          <div className="flex md:justify-center mg mb-4">
-            <Image
-              src={logo2}
-              alt="Avatar"
-              className="w-10 h-10 lg:mr-3"
-              width={100}
-              height={100}
-            />
+            <div className="flex md:justify-center mt-4">
+              <Image
+                src={logo2}
+                alt="Avatar"
+                className="w-10 h-10 lg:mr-3"
+                width={100}
+                height={100}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </ProtectedRoute>
     </>
   );
 }

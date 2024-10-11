@@ -31,7 +31,7 @@ const utilities = [
 
 export default function UtilitiesCard() {
   return (
-    <div className="flex text-[10px] lg:text-sm lg: space-x-2 lg:space-x-7 ">
+    <div className="flex text-[10px] lg:text-sm lg: space-x-2 lg:space-x-7 w-full ">
       {utilities.map((utility) => (
         <div
           key={utility.id}

@@ -24,6 +24,11 @@ const MobileNav = () => {
       icon: <Companies />,
       link: "/dashboard/coreservices/utilities",
     },
+    {
+      name: "Profile",
+      icon: <Customers />,
+      link: "/dashboard/coreservices/profile",
+    },
   ];
 
   return (
