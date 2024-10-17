@@ -108,7 +108,7 @@ const EnhancedTable = ({
   );
 
   return (
-    <div className="mb-36 w-full md:px-5 py-5 px-2 bg-gray-50 hover:shadow-lg rounded-xl shadow-md ">
+    <div className="w-full md:px-5 py-5 px-2 bg-gray-50 hover:shadow-lg rounded-xl shadow-md ">
       {/* Title, Search, and Sort Controls */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-[#123288]">{title}</h2>

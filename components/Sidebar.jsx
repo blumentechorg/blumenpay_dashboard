@@ -198,7 +198,7 @@ export default function Sidebar() {
               )}
             </div>
 
-            <div className="flex md:justify-center mt-4">
+            {/* <div className="flex md:justify-center mt-4">
               <Image
                 src={logo2}
                 alt="Avatar"
@@ -206,7 +206,7 @@ export default function Sidebar() {
                 width={100}
                 height={100}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </ProtectedRoute>

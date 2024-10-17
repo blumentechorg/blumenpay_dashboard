@@ -13,8 +13,8 @@ import MobileNav from "./MobileNav";
 export default function Navbar() {
   return (
     <>
-      <div className=" container sticky top-0  flex justify-between border-b  py-4 px-5  bg-white shadow-b shadow-lg  ">
-        <div className="flex space-x-3  ">
+      <div className="w-full sticky top-0 flex justify-between border-b py-4 px-5 bg-white shadow-b shadow-lg">
+        <div className="flex space-x-3">
           {/* ltr menu */}
           <div className="">
             <MobileNav />
@@ -32,8 +32,8 @@ export default function Navbar() {
         </div>
 
         {/* rtl menu */}
-        <div className="flex space-x-3 ">
-          <div className="hidden lg:block  ">
+        <div className="flex space-x-3">
+          <div className="hidden lg:block">
             <Search />
           </div>
           <div className="hover:scale-110 transition-transform duration-200">

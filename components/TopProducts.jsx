@@ -25,51 +25,55 @@ const TableComponent = () => {
   };
 
   return (
-    <div className="overflow-x-auto bg-[#F7F9FB] hover:cursor-pointer hover:shadow-lg font-light lg:text-base md:text-sm text-xs rounded-xl p-5 pb-8 w-[345px] md:w-[550px] shadow-md  ">
-      <div className="px-5 font-semibold text-[#05004E] lg:pb-2">
+    <div className=" bg-[#F7F9FB] hover:cursor-pointer hover:shadow-lg font-light text-xs sm:text-sm md:text-base rounded-xl p-3 sm:p-5 pb-6 sm:pb-8 shadow-md w-full h-[300px]">
+      <div className="px-2 sm:px-5 font-semibold text-[#05004E] pb-2 lg:pb-4">
         Top Products
       </div>
-      <table className="min-w-full table-auto">
-        <thead className="">
-          <tr className="text-xs text-[#1C1C1C66] font-light">
-            <th className="px-4 py-2">#</th>
-            <th className="px-4 py-2">Name</th>
-            <th className="px-4 py-2">Popularity</th>
-            <th className="px-4 py-2">Sales</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={item.id} className="hover:bg-gray-50 border-b">
-              <td className="px-4 py-2 text-center">{index + 1}</td>
-              <td className="px-4 py-2 text-[#05004E] ">{item.name}</td>
-              <td className="px-4 py-2">
-                <div
-                  className={`w-full  rounded-full ${getBackgroundColor(
-                    item.popularity
-                  )}`}
-                >
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto">
+          <thead>
+            <tr className="text-xs sm:text-sm text-[#1C1C1C66] font-light">
+              <th className="px-2 sm:px-4 py-2">#</th>
+              <th className="px-2 sm:px-4 py-2">Name</th>
+              <th className="px-2 sm:px-4 py-2">Popularity</th>
+              <th className="px-2 sm:px-4 py-2">Sales</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <tr key={item.id} className="hover:bg-gray-50 border-b">
+                <td className="px-2 sm:px-4 py-2 text-center">{index + 1}</td>
+                <td className="px-2 sm:px-4 py-2 text-[#05004E]">
+                  {item.name}
+                </td>
+                <td className="px-2 sm:px-4 py-2">
                   <div
-                    className={`h-1 rounded-full ${getPopularityColor(
+                    className={`w-full rounded-full ${getBackgroundColor(
                       item.popularity
                     )}`}
-                    style={{ width: `${item.popularity}%` }}
-                  ></div>
-                </div>
-              </td>
-              <td className="px-4 py-1 text-center">
-                <button
-                  className={` text-white text-xs ${getBackgroundColor(
-                    item.popularity
-                  )} rounded-full px-1 border  transition`}
-                >
-                  {item.sales}
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                  >
+                    <div
+                      className={`h-1 rounded-full ${getPopularityColor(
+                        item.popularity
+                      )}`}
+                      style={{ width: `${item.popularity}%` }}
+                    ></div>
+                  </div>
+                </td>
+                <td className="px-2 sm:px-4 py-1 text-center">
+                  <button
+                    className={`text-white text-xs sm:text-sm ${getBackgroundColor(
+                      item.popularity
+                    )} rounded-full px-1 sm:px-2 border transition`}
+                  >
+                    {item.sales}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

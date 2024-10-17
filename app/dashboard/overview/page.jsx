@@ -151,15 +151,15 @@ const OverView = () => {
           <TrafficWebsite />
         </span>
       </div>
-      <div className="lg:flex lg:space-x-5 mx-auto grid gap-y-5">
-        <span>
+      <div className="grid lg:grid-cols-2 gap-5">
+        <span className="w-full">
           <TopProducts />
         </span>
-        <span>
+        <span className="w-full ">
           <TrafficLocation />
         </span>
       </div>
-      <div className="mx-auto ">
+      <div className="mb-10 ">
         <Table
           columnsData={columns}
           rowData={data}
