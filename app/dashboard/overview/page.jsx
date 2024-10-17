@@ -123,8 +123,8 @@ const OverView = () => {
       <div>
         <Card />
       </div>
-      <div className="grid lg:grid-cols-3 gap-x-5 gap-y-5 mx-auto lg:mx-0">
-        <span className="w-[345px] md:w-[550px] lg:w-full lg:col-span-2 bg-gray-50 rounded-xl p-5 shadow-md hover:cursor-pointer hover:shadow-lg">
+      <div className="grid lg:grid-cols-3 gap-x-5 gap-y-5 ">
+        <span className=" lg:col-span-2 bg-gray-50 rounded-xl p-5 shadow-md hover:cursor-pointer hover:shadow-lg">
           <div className="flex text-xs space-x-14 pb-2">
             <div className="space-x-5">
               <span className="font-semibold">Total Users</span>

@@ -7,12 +7,12 @@ export default function CompanyCard({ params }) {
   const getRoute = (id) => `/dashboard/companies/${id}`;
 
   return (
-    <div className="grid lg:grid-cols-3 gap-y-5 lg:gap-y-8 pb-10 place-items-center ">
+    <div className="grid lg:grid-cols-3 gap-5 lg:gap-8 pb-10 place-items-center ">
       {cardItems.map((company) => (
         <Link
           href={getRoute(company.id)}
           key={company.id}
-          className="container grid h-[400px] w-full hover:cursor-pointer hover:shadow-lg md:w-4/5 lg:w-[320px]  place-items-center rounded-xl bg-gray-50 shadow-md py-4 px-5 gap-y-10"
+          className="container grid h-[400px] w-full hover:cursor-pointer hover:shadow-lg place-items-center rounded-xl bg-gray-50 shadow-md py-4 px-5 gap-y-10"
         >
           <div className=" md:text-2xl text-xl font-semibold tracking-wider place-content-start">
             {company.companyName}

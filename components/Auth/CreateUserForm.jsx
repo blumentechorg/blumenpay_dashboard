@@ -8,23 +8,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 // Add this import
 import { toast } from "react-toastify";
-
-// Define the Yup validation schema with additional fields
-const validationSchema = Yup.object().shape({
-  first_name: Yup.string().required("First name is required"),
-  last_name: Yup.string().required("Last name is required"),
-  username: Yup.string().required("Username is required"),
-  collectionLimit: Yup.number()
-    .required("Collection limit is required")
-    .min(1, "Collection limit must be at least 1"),
-  email: Yup.string().required("Email is required").email("Email is invalid"),
-  password: Yup.string()
-    .required("Password is required")
-    .min(4, "Password must be at least 4 characters"),
-  confirmPassword: Yup.string()
-    .required("Confirm Password is required")
-    .oneOf([Yup.ref("password")], "Passwords must match"),
-});
+import { registerSchema } from "../../Validations/RegisterValidation"; // Import the schema
 
 const SignUpForm = () => {
   const {
@@ -32,7 +16,7 @@ const SignUpForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(validationSchema), // Integrate Yup validation schema
+    resolver: yupResolver(registerSchema), // Integrate Yup validation schema
   });
 
   const [loading, setLoading] = useState(false);
@@ -93,47 +77,47 @@ const SignUpForm = () => {
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
         Sign Up
       </h2>
+      <div className="flex space-x-5">
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="first_name"
+          >
+            First Name:
+          </label>
+          <input
+            type="text"
+            id="first_name"
+            {...register("first_name")}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.first_name && (
+            <span className="text-red-500 text-xs">
+              {errors.first_name.message}
+            </span>
+          )}
+        </div>
 
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="first_name"
-        >
-          First Name:
-        </label>
-        <input
-          type="text"
-          id="first_name"
-          {...register("first_name")}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        {errors.first_name && (
-          <span className="text-red-500 text-xs">
-            {errors.first_name.message}
-          </span>
-        )}
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="last_name"
+          >
+            Last Name:
+          </label>
+          <input
+            type="text"
+            id="last_name"
+            {...register("last_name")}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.last_name && (
+            <span className="text-red-500 text-xs">
+              {errors.last_name.message}
+            </span>
+          )}
+        </div>
       </div>
-
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="last_name"
-        >
-          Last Name:
-        </label>
-        <input
-          type="text"
-          id="last_name"
-          {...register("last_name")}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        {errors.last_name && (
-          <span className="text-red-500 text-xs">
-            {errors.last_name.message}
-          </span>
-        )}
-      </div>
-
       <div className="mb-4">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
@@ -150,26 +134,6 @@ const SignUpForm = () => {
         {errors.username && (
           <span className="text-red-500 text-xs">
             {errors.username.message}
-          </span>
-        )}
-      </div>
-
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="collectionLimit"
-        >
-          Collection Limit:
-        </label>
-        <input
-          type="number"
-          id="collectionLimit"
-          {...register("collectionLimit")}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        {errors.collectionLimit && (
-          <span className="text-red-500 text-xs">
-            {errors.collectionLimit.message}
           </span>
         )}
       </div>
@@ -264,10 +228,32 @@ const SignUpForm = () => {
         )}
       </div>
 
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 text-sm font-bold mb-2"
+          htmlFor="role"
+        >
+          Role:
+        </label>
+        <select
+          id="role"
+          {...register("role")}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select a role</option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+          <option value="super_admin">Super Admin</option>
+        </select>
+        {errors.role && (
+          <span className="text-red-500 text-xs">{errors.role.message}</span>
+        )}
+      </div>
+
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-gray-950 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {loading ? "Signing up..." : "Sign Up"}
       </button>

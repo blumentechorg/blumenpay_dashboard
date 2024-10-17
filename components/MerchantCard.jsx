@@ -5,29 +5,42 @@ export default function MerchantCard() {
       amount: "N100,000",
       description: "Money In",
       change: "+8% from yesterday",
+      url: "https://paystack.com",
     },
     {
       companyName: "Paga",
       amount: "N200,000",
       description: "Money In",
       change: "+12% from yesterday",
+      url: "https://www.mypaga.com",
+    },
+
+    {
+      companyName: "BlumenPay",
+      amount: "N200,000",
+      description: "Money In",
+      change: "+12% from yesterday",
+      url: "https://blumenpay.com",
     },
 
     // Add more data objects here
   ];
 
   return (
-    <div className="container py-16 text-[10px]  ">
-      <div className="grid grid-cols-1 lg:grid-cols-3  gap-y-5 place-items-center ">
+    <div className="container py-16 text-[10px] ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 place-items-center w-[1000px] ">
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="grid rounded-3xl lg:w-[320px] lg:h-[330px] w-72 bg-gray-50 p-5 gap-y-16 lg:gap-y-36 text-gray-800 shadow-md "
+            href={card.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="grid rounded-3xl bg-gray-50 p-5 gap-y-16 lg:gap-y-36 text-gray-800 shadow-md place-content-center container "
           >
             <div className=" text-3xl font-semibold text-center">
               {card.companyName}
             </div>
-            <div className="mx-5 lg:mx-3 place-items-center flex space-x-4 rounded-2xl lg:w-[259px] lg:h-[110px] w-52 justify-center  bg-red-50 p-5">
+            <div className="mx-5 lg:mx-3 place-content-center container flex space-x-4 rounded-2xl lg:w-[259px] lg:h-[110px] w-52   bg-red-50 p-5">
               <div className="h-10 w-10 rounded-full p-3 bg-[#FA5A7D]">
                 <svg
                   width="10"

@@ -196,10 +196,10 @@ const CustomerTable = () => {
   };
 
   return (
-    <div className="lg:p-10 py-10 shadow-md bg-gray-50 rounded-xl lg:w-full md:w-[500px] text-[10px] md:text-xs">
+    <div className="lg:p-10 py-10 shadow-md bg-gray-50 rounded-xl lg:w-full md:w-[500px] text-[10px] md:text-xs hover:cursor-pointer hover:shadow-lg">
       {/* Table Header */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Customer Table</h2>
+        <h2 className="text-xl font-bold">All Customers</h2>
         <div className="flex items-center space-x-4">
           <GlobalFilter
             globalFilter={state.globalFilter}

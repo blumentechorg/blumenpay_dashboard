@@ -6,6 +6,11 @@ export const registerSchema = yup.object().shape({
   password: yup.string().min(6).max(10).required(),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password"), null], )
+    .oneOf([yup.ref("password"), null], "Passwords must match")
     .required(),
+  // Add role validation
+  role: yup
+    .string()
+    .oneOf(["user", "admin", "super_admin"], "Invalid role")
+    .required("Role is required"),
 });
