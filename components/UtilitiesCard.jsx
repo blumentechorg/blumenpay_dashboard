@@ -35,7 +35,7 @@ export default function UtilitiesCard() {
       {utilities.map((utility) => (
         <div
           key={utility.id}
-          className=" text-[10px] lg:text-sm hover:cursor-pointer hover:shadow-lg flex space-x-2 lg:space-x-5 rounded-xl bg-gray-50 items-center p-2 lg:px-10 lg:py-7 shadow-md"
+          className=" text-[10px] lg:text-sm hover:cursor-pointer hover:shadow-lg flex space-x-2 lg:space-x-5 rounded-xl bg-gray-50 items-center p-3 md:p-5  lg:px-10 lg:py-7 shadow-md"
         >
           <div
             className={`p-1 md:p-3   rounded-xl h-5 md:h-12 lg:h-14  flex items-center`}

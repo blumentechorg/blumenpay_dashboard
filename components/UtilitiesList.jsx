@@ -60,7 +60,7 @@ export default function UtilitiesList() {
       {utilities.map((utility, index) => (
         <div
           key={index}
-          className="flex justify-between text-[10px] md:text-sm rounded-xl bg-gray-50 p-5 md:p-7 lg:w-[594px] shadow-md hover:cursor-pointer hover:shadow-lg"
+          className="flex justify-between text-[10px] md:text-sm rounded-xl bg-gray-50 p-5 md:p-7 lg:w-[594px] w-[400px] shadow-md hover:cursor-pointer hover:shadow-lg"
         >
           <div className="flex space-x-3 md:space-x-5">
             <div className={`p-3 md:p-4 rounded-xl ${utility.iconBg}`}>

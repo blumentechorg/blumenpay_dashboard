@@ -198,8 +198,8 @@ const CustomerTable = () => {
   return (
     <div className="lg:p-10 py-10 shadow-md bg-gray-50 rounded-xl lg:w-full md:w-[500px] text-[10px] md:text-xs hover:cursor-pointer hover:shadow-lg">
       {/* Table Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">All Customers</h2>
+      <div className="flex justify-between items-center mb-4 px-5 md:px-0 ">
+        <h2 className="lg:text-xl md:text-base font-bold">All Customers</h2>
         <div className="flex items-center space-x-4">
           <GlobalFilter
             globalFilter={state.globalFilter}
@@ -279,7 +279,7 @@ const CustomerTable = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-4 px-5 md:px-0">
         <div className="flex items-center space-x-2">
           <span>
             Page{" "}
