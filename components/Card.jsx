@@ -4,20 +4,21 @@ import React from "react";
 
 const CardComponent = ({ cardData }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
+    <div className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-y-4 gap-x-3 text-[10px] md:text-xs  ">
       {cardData.map((card, index) => (
         <div
           key={index}
-          className={`p-4 sm:p-5 rounded-xl shadow-md items-center hover:cursor-pointer hover:shadow-lg w-full ${card.bgColor}`}
+          className={`p-5   rounded-xl  shadow-md items-center hover:cursor-pointer hover:shadow-lg ${card.bgColor}`}
           style={{ ...card.customStyles }}
         >
-          <div className="text-xs sm:text-sm">{card.title}</div>
-          <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold my-2">
+          <div className="">{card.title}</div>
+          <div className="text-xl md:text-2xl lg:text-[34px] lg:pt-2 lg:pb-1 ">
             {card.amount}
           </div>
-          <div className="flex items-center text-xs sm:text-sm">
-            <span className="mr-1">{card.percentage}</span>
-            <span className="text-base">{card.svg}</span>
+
+          <div className="flex">
+            <div className="">{card.percentage}</div>
+            <div className="py-1">{card.svg}</div>
           </div>
         </div>
       ))}

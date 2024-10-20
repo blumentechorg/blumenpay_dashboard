@@ -3,7 +3,7 @@
 import React from "react";
 import CustomerCard from "@/components/customerCard";
 import CustomerTable from "@/components/CustomerTable";
-// import { columns } from "@/components/CustomerTable"; // Assuming you've moved the data to this file
+import { customers, data } from "@/app/api/data"; // Assuming you've moved the data to this file
 
 export default function Customers() {
   return (
@@ -14,8 +14,8 @@ export default function Customers() {
         </section>
         <section>
           <CustomerTable
-            // columnsData={columns}
-            // rowData={data}
+            columnsData={customers}
+            rowData={data}
             className="w-full text-blue-950"
           />
         </section>

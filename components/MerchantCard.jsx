@@ -28,7 +28,7 @@ export default function MerchantCard() {
 
   return (
     <div className="container py-16 text-[10px] ">
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 place-items-center ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 place-items-center w-[1000px] ">
         {cardData.map((card, index) => (
           <div
             key={index}
@@ -40,7 +40,7 @@ export default function MerchantCard() {
             <div className=" text-3xl font-semibold text-center">
               {card.companyName}
             </div>
-            <div className=" place-content-center container flex space-x-4 rounded-2xl lg:w-[259px] h-[110px] bg-red-50 p-5">
+            <div className="mx-5 lg:mx-3 place-content-center container flex space-x-4 rounded-2xl lg:w-[259px] lg:h-[110px] w-52   bg-red-50 p-5">
               <div className="h-10 w-10 rounded-full p-3 bg-[#FA5A7D]">
                 <svg
                   width="10"
