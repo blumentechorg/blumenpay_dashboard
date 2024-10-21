@@ -1,4 +1,3 @@
-// app/dashboard/companies/[id]/page.jsx
 import Aimedicare from "@/public/svg/companies/aimedicare";
 import Customers from "@/public/svg/customers/customer";
 import Algorizmih from "@/public/svg/companies/algorizmih";
@@ -186,7 +185,9 @@ export default function CompanyDetailsPage({ params }) {
             {selectedCompany.content.map((item) => (
               <Link
                 key={item.id}
-                href={`/dashboard/companies/${id}/details/${item.id}`}
+                href={`/dashboard/companies/${id}/details/${encodeURIComponent(
+                  item.name.toLowerCase().replace(/\s+/g, "-")
+                )}`}
                 className={`p-4 rounded-lg ${item.bgColor} shadow-md w-[230px]  hover:cursor-pointer hover:shadow-lg`}
               >
                 <div

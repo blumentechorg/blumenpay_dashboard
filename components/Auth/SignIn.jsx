@@ -49,9 +49,29 @@ const SignInForm = () => {
       );
 
       if (user) {
+        // Store token and role in cookies (adjust this according to your implementation)
+        document.cookie = `token=${user.token}; path=/`;
+        document.cookie = `role=${user.role}; path=/`;
+
+        // Log in user
         login(user.token);
         toast.success("Login successful!");
-        router.push("/dashboard/overview");
+
+        // Redirect based on user role
+        switch (user.role) {
+          case "super_admin":
+            router.push("/dashboard/super_admin/overview");
+            break;
+          case "admin":
+            router.push("/dashboard/admin/overview");
+            break;
+          case "user":
+            router.push("/dashboard/user/overview");
+            break;
+          default:
+            router.push("/login");
+            break;
+        }
       } else {
         throw new Error("Invalid credentials");
       }

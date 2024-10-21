@@ -117,7 +117,7 @@ const data = [
   },
 ];
 
-const OverView = () => {
+const SuperAdminOverView = () => {
   return (
     <div className="grid gap-y-4 ">
       <div>
@@ -171,4 +171,4 @@ const OverView = () => {
   );
 };
 
-export default OverView;
+export default SuperAdminOverView;
