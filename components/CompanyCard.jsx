@@ -1,10 +1,10 @@
 "use client";
-import { cardItems } from "@/lib/companycard/cardItems";
+import { cardItems } from "@/lib/companycard/card";
 import Link from "next/link";
 
 export default function CompanyCard({ params }) {
   // Generate dynamic route based on company ID
-  const getRoute = (id) => `/dashboard/companies/${id}`;
+  const getRoute = (id) => `/dashboard/super_admin/companies/${id}`;
 
   return (
     <div className="grid lg:grid-cols-3 gap-5 lg:gap-8 pb-10 place-items-center ">

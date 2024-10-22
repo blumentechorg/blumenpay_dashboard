@@ -168,7 +168,7 @@ export default function CompanyDetailsPage({ params }) {
 
   return (
     <div className="container mx-auto py-10">
-      <Link href="/dashboard/companies/" className=" ">
+      <Link href="/dashboard/super_admin/companies" className=" ">
         <button className="hover:scale-110 transition-transform duration-200 flex text-sm space-x-2">
           <HiArrowLongLeft className="w-5 h-5" />
           <div>Back</div>
@@ -185,7 +185,7 @@ export default function CompanyDetailsPage({ params }) {
             {selectedCompany.content.map((item) => (
               <Link
                 key={item.id}
-                href={`/dashboard/companies/${id}/details/${encodeURIComponent(
+                href={`/dashboard/super_admin/companies/${id}/details/${encodeURIComponent(
                   item.name.toLowerCase().replace(/\s+/g, "-")
                 )}`}
                 className={`p-4 rounded-lg ${item.bgColor} shadow-md w-[230px]  hover:cursor-pointer hover:shadow-lg`}

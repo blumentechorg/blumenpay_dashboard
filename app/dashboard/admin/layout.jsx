@@ -6,7 +6,7 @@ import AdminSidebar from "@/components/admin/AdminSidebar";
 const UserLayout = ({ children }) => {
   return (
     <>
-      <ProtectedRoute allowedRoles={["admin"]}>
+      <ProtectedRoute allowedRoles={["admin", "user"]}>
         <div className="flex">
           {/* Sticky Sidebar */}
           <div className="flex-none border-r min-h-screen sticky top-0 md:block hidden">

@@ -1,10 +1,10 @@
-import MerchantCard from "@/components/MerchantCard";
+import { BlumenPayCard } from "@/components/MerchantCard";
 
 export default function page() {
   return (
     <>
       <div>
-        <MerchantCard />
+        <BlumenPayCard />
       </div>
     </>
   );

@@ -42,7 +42,7 @@ const MetricDetailsPage = ({ params }) => {
 
   return (
     <div className="container mx-auto py-10">
-      <Link href={`/dashboard/companies/${id}`}>
+      <Link href={`/dashboard/super_admin/companies/${id}`}>
         <button className="hover:scale-110 transition-transform duration-200 flex text-sm space-x-2">
           <HiArrowLongLeft className="w-5 h-5" />
           <div>Back</div>

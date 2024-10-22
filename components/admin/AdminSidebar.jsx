@@ -34,12 +34,12 @@ export default function Sidebar() {
     {
       name: "Overview",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "../dashboard/admin/overview",
+      link: "/dashboard/admin/overview",
     },
     {
       name: "Customers",
       icon: <GoDotFill className="text-gray-600 w-3 h-5" />,
-      link: "../dashboard/admin/customers",
+      link: "/dashboard/admin/customers",
     },
   ];
 

@@ -6,7 +6,7 @@ import SuperSidebar from "@/components/super_admin/SuperSidebar";
 const SuperAdminLayout = ({ children }) => {
   return (
     <>
-      <ProtectedRoute allowedRoles={["super_admin"]}>
+      <ProtectedRoute allowedRoles={["super_admin", "admin", "user"]}>
         <div className="flex">
           {/* Sticky Sidebar */}
           <div className="flex-none border-r min-h-screen sticky top-0 md:block hidden">

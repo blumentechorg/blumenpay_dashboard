@@ -1,10 +1,11 @@
-import MerchantCard from "@/components/MerchantCard";
+import { PagaCard, PaystackCard } from "@/components/MerchantCard";
 
 export default function page() {
   return (
     <>
-      <div>
-        <MerchantCard />
+      <div className="flex gap-x-10">
+        <PagaCard />
+        <PaystackCard />
       </div>
     </>
   );

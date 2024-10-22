@@ -1,5 +1,5 @@
 "use client";
-import { SubCardItems } from "@/lib/companycard/cardItems";
+import { SubCardItems } from "@/lib/companycard/cards";
 import Link from "next/link";
 
 export default function SubCompanyCard({ params }) {
