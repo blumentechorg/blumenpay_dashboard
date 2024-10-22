@@ -1,5 +1,5 @@
 "use client";
-import { cardItems } from "@/lib/companycard/card";
+import { cardItems } from "@/lib/companycard/cards";
 import Link from "next/link";
 
 export default function CompanyCard({ params }) {
