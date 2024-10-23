@@ -18,7 +18,7 @@ export default function Search() {
           <input
             type="text"
             placeholder="Search"
-            className="w-16 py-1 px- outline-none text-sm font-light bg-gray-100 "
+            className="w-16 py-1 outline-none focus:outline-none focus:ring-0 text-sm font-light bg-gray-100"
           />
         </div>
 

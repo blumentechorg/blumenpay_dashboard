@@ -1,4 +1,4 @@
-import SubCompanyCard from "@/components/SubCompanyCard";
+import UserSubCompanyCard from "@/components/UserCompanyCard";
 import Card from "@/components/Card";
 
 export default function SubCompanies() {
@@ -8,7 +8,7 @@ export default function SubCompanies() {
         <Card />
       </div>
       <div>
-        <SubCompanyCard />
+        <UserSubCompanyCard />
       </div>
     </div>
   );

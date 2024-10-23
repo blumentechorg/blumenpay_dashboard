@@ -151,7 +151,7 @@ const CustomerTable = () => {
     []
   );
 
-  const data = useMemo(() => customers, []);
+  // const data = useMemo(() => customers, []);
 
   const [sortBy, setSortBy] = useState("name");
 
