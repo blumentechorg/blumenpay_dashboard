@@ -151,7 +151,7 @@ const CustomerTable = () => {
     []
   );
 
-  // const data = useMemo(() => customers, []);
+  const data = useMemo(() => customers, []);
 
   const [sortBy, setSortBy] = useState("name");
 
@@ -196,10 +196,10 @@ const CustomerTable = () => {
   };
 
   return (
-    <div className="lg:p-10 py-10 shadow-md bg-gray-50 rounded-xl lg:w-full md:w-[500px] text-[10px] md:text-xs hover:cursor-pointer hover:shadow-lg">
+    <div className="lg:p-10 py-10 shadow-md bg-gray-50 px-4 rounded-xl  text-[10px] md:text-xs hover:cursor-pointer hover:shadow-lg w-[350px] md:w-full">
       {/* Table Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">All Customers</h2>
+      <div className="flex flex-wrap justify-between items-center mb-4">
+        <h2 className="text-base md:text-xl font-bold">All Customers</h2>
         <div className="flex items-center space-x-4">
           <GlobalFilter
             globalFilter={state.globalFilter}

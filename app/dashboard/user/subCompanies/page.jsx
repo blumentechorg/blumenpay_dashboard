@@ -1,4 +1,4 @@
-import UserSubCompanyCard from "@/components/UserCompanyCard";
+import UserSubCompanyCard from "@/components/user/UserCompanyCard";
 import Card from "@/components/Card";
 
 export default function SubCompanies() {

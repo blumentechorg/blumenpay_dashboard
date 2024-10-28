@@ -25,7 +25,7 @@ const TableComponent = () => {
   };
 
   return (
-    <div className=" bg-[#F7F9FB] hover:cursor-pointer hover:shadow-lg font-light text-xs sm:text-sm md:text-base rounded-xl p-3 sm:p-5 pb-6 sm:pb-8 shadow-md w-full h-[300px]">
+    <div className=" bg-[#F7F9FB] hover:cursor-pointer hover:shadow-lg font-light text-xs sm:text-sm md:text-base rounded-xl px-5 py-10 pb-6 sm:pb-8 shadow-md w-full min-w-[350px] h-full">
       <div className="px-2 sm:px-5 font-semibold text-[#05004E] pb-2 lg:pb-4">
         Top Products
       </div>

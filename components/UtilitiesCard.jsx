@@ -31,11 +31,11 @@ const utilities = [
 
 export default function UtilitiesCard() {
   return (
-    <div className="flex text-[10px] lg:text-sm space-x-2 lg:space-x-7   ">
+    <div className="flex text-xs lg:text-sm space-x-2 lg:space-x-7 ">
       {utilities.map((utility) => (
         <div
           key={utility.id}
-          className=" text-[10px] lg:text-sm hover:cursor-pointer hover:shadow-lg flex space-x-2 lg:space-x-5 rounded-xl bg-gray-50 items-center p-2 lg:px-10 lg:py-7 shadow-md"
+          className=" text-[10px] lg:text-sm hover:cursor-pointer hover:shadow-lg flex space-x-2 md:space-x-4 lg:space-x-5 rounded-xl bg-gray-50 items-center p-2 md:p-7 lg:px-10 lg:py-7 shadow-md"
         >
           <div
             className={`p-1 md:p-3   rounded-xl h-5 md:h-12 lg:h-14  flex items-center`}
@@ -47,7 +47,7 @@ export default function UtilitiesCard() {
             />
           </div>
           <div className="space-y-2">
-            <div className="lg:text-base font-semibold">{utility.name}</div>
+            <div className="lg:text-base md:font-semibold">{utility.name}</div>
             <div className=" text-gray-500">{utility.description}</div>
           </div>
         </div>

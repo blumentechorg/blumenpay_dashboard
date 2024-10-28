@@ -4,7 +4,7 @@ import React from "react";
 
 const CardComponent = ({ cardData }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-y-4 gap-x-3 text-[10px] md:text-xs  ">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-3 text-[10px] md:text-xs   ">
       {cardData.map((card, index) => (
         <div
           key={index}

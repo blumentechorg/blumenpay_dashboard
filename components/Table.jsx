@@ -108,16 +108,16 @@ const EnhancedTable = ({
   );
 
   return (
-    <div className="w-full md:px-5 py-5 px-2 bg-gray-50 hover:shadow-lg rounded-xl shadow-md ">
+    <div className=" md:px-5 py-5 px-2 bg-gray-50 hover:shadow-lg rounded-xl shadow-md w-[350px] md:w-full">
       {/* Title, Search, and Sort Controls */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-[#123288]">{title}</h2>
+      <div className="flex flex-wrap justify-between items-center space-y-2 mb-4">
+        <h2 className="lg:text-xl font-semibold text-[#123288]">{title}</h2>
         <div className="flex items-center space-x-4 text-xs">
           <input
             value={globalFilter || ""}
             onChange={(e) => setGlobalFilter(e.target.value)}
             placeholder="Search..."
-            className="px-4 py-2 border rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:border-[#123288]"
+            className="px-4 py-2 border rounded-lg text-sm placeholder-gray-500 focus:outline-none focus:border-[#123288] w-40 lg:w-full"
           />
           <select
             value={sortOrder}
@@ -203,14 +203,14 @@ const EnhancedTable = ({
         </table>
       </div>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center text-[10px]">
         {/* Page Size Selection */}
         <div className="mt-2 flex space-x-2">
-          <label className="block mb-2 text-sm pt-2">Rows per page:</label>
+          <label className="block mb-2 pt-2">Rows per page:</label>
           <select
             value={pageSize}
             onChange={(e) => setPageSize(Number(e.target.value))}
-            className="px-3 py-1 flex border rounded-lg focus:outline-none focus:border-[#123288]"
+            className="px- h-8 py-1 flex border rounded-lg focus:outline-none focus:border-[#123288]"
           >
             {[5, 10, 20, 50].map((pageSize) => (
               <option key={pageSize} value={pageSize}>

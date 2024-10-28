@@ -10,10 +10,10 @@ export default function CustomerCard() {
 
   return (
     <div className="">
-      <div className="flex text-[10px] py-4 px-2 md:px-7 hover:cursor-pointer hover:shadow-lg lg:py-8 space-x-4 md:space-x-8 lg:space-x-12 rounded-xl bg-gray-50 md:w-4/5 lg:w-3/5 shadow-md    ">
+      <div className="flex text-[10px] p-4 md:p-7 hover:cursor-pointer hover:shadow-lg lg:py-8 space-x-4 md:space-x-8 lg:space-x-12 rounded-xl bg-gray-50 w-full md:w-[600px] lg:w-[800px]  shadow-md    ">
         {/* Customer Section */}
-        <div className="flex space-x-2 lg:space-x-5 ">
-          <div className="bg-blue-200  rounded-full  w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 p-2 lg:p-4 ">
+        <div className="flex space-x-2 lg:space-x-5 pt-2 md:pt-0 ">
+          <div className="bg-blue-200  rounded-full  w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 p-2  lg:p-4 ">
             <Customer />
           </div>
           <div>
@@ -38,7 +38,7 @@ export default function CustomerCard() {
         </div>
 
         {/* Members Section */}
-        <div className="flex space-x-2 lg:space-x-5 ">
+        <div className="flex space-x-2 lg:space-x-5 pt-2 md:pt-0  ">
           <div className="bg-green-200 rounded-full  w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 p-2 lg:p-4 ">
             <Members />
           </div>

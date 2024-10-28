@@ -7,7 +7,7 @@ export default function CompanyCard({ params }) {
   const getRoute = (id) => `/dashboard/super_admin/companies/${id}`;
 
   return (
-    <div className="grid lg:grid-cols-3 gap-5 lg:gap-8 pb-10 place-items-center ">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8 pb-10 place-items-center ">
       {cardItems.map((company) => (
         <Link
           href={getRoute(company.id)}
@@ -18,7 +18,16 @@ export default function CompanyCard({ params }) {
             {company.companyName}
           </div>
 
-          <div>{company.logo}</div>
+          <div></div>
+
+          {company.logo ? (
+            <div className="relative h-24 w-24">{company.logo}</div>
+          ) : (
+            <div className="h-24 w-24 flex items-center justify-center bg-gray-200 rounded-full">
+              <span className="text-sm text-gray-500">No Logo</span>{" "}
+              {/* Placeholder */}
+            </div>
+          )}
 
           <div className="grid grid-cols-2 text-xs gap-2">
             {company.content.map((item) => (

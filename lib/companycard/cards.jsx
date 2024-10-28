@@ -1,7 +1,8 @@
 import Sales from "@/public/svg/sales";
 import Adduser from "@/public/svg/adduser";
 import Goalpass from "@/public/svg/companies/goalpass";
-// import Yanna from "@/public/svg/subCompanies/yanna";
+import Blumen from "@/public/svg/companies/Blumen";
+// import Yanna from "@/public/images/yanna.png";
 
 export const cardItems = [
   {
@@ -15,13 +16,6 @@ export const cardItems = [
         iconBgColor: "bg-[#F8E71C]",
         icon: <Sales />,
         name: "Khaliques Group",
-        // project: {
-        //   project1: "Yanna Apartments",
-        //   project2: "Khaliques Global",
-        //   project3: "Sanum spa",
-        //   project4: "Village restaurant",
-        //   project5: "gym",
-        // },
       },
       {
         id: 2,
@@ -29,13 +23,6 @@ export const cardItems = [
         iconBgColor: "bg-[#BD10E0]",
         icon: <Adduser />,
         name: "Khaliques Group",
-        // project: {
-        //   project1: "Yanna Apartments",
-        //   project2: "Khaliques Global",
-        //   project3: "Sanum spa",
-        //   project4: "Village restaurant",
-        //   project5: "gym",
-        // },
       },
       {
         id: 3,
@@ -43,13 +30,6 @@ export const cardItems = [
         iconBgColor: "bg-[#F8E71C]",
         icon: <Sales />,
         name: "Khaliques Group",
-        // project: {
-        //   project1: "Yanna Apartments",
-        //   project2: "Khaliques Global",
-        //   project3: "Sanum spa",
-        //   project4: "Village restaurant",
-        //   project5: "gym",
-        // },
       },
       {
         id: 4,
@@ -57,20 +37,13 @@ export const cardItems = [
         iconBgColor: "bg-[#F8E71C]",
         icon: <Sales />,
         name: "Khaliques Group",
-        // project: {
-        //   project1: "Yanna Apartments",
-        //   project2: "Khaliques Global",
-        //   project3: "Sanum spa",
-        //   project4: "Village restaurant",
-        //   project5: "gym",
-        // },
       },
     ],
   },
   {
     id: 2,
     companyName: "Blumen MarketPlace",
-    logo: null,
+    logo: <Blumen />,
     content: [
       {
         id: 1,
@@ -168,7 +141,7 @@ export const UserSubCardItems = [
   {
     id: 1,
     companyName: "Yanna Apartments",
-    logo: null,
+    logo: "/images/yanna.png",
     content: [
       {
         id: 1,
@@ -306,7 +279,7 @@ export const UserSubCardItems = [
   {
     id: 5,
     companyName: "Khaliques Global",
-    logo: null,
+    logo: "/images/khaliques.png",
     content: [
       {
         id: 1,
@@ -328,7 +301,7 @@ export const SubCardItems = [
   {
     id: 1,
     companyName: "Yanna Apartments",
-    logo: null,
+    logo: "/images/yanna.png",
     content: [
       {
         id: 1,
@@ -466,7 +439,7 @@ export const SubCardItems = [
   {
     id: 5,
     companyName: "Khaliques Global",
-    logo: null,
+    logo: "/images/khaliques.png",
     content: [
       {
         id: 1,

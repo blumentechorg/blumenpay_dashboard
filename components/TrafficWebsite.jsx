@@ -10,8 +10,8 @@ export default function TrafficWebsite() {
 
   return (
     <div>
-      <div className="px-7 text-sm py-10 space-y-5 h-[400px] bg-gray-50 font-light rounded-xl shadow-md hover:cursor-pointer hover:shadow-lg w-full">
-        <div className="font-semibold">Traffic by Website</div>
+      <div className="px-7 text-xs py-10 space-y-5 h-[320px] md:h-[420px] bg-gray-50 font-light rounded-xl shadow-md hover:cursor-pointer hover:shadow-lg w-full min-w-[350px]  ">
+        <div className="font-semibold ">Traffic by Website</div>
 
         {websites.map((website, index) => (
           <div key={index} className="flex px-5 ">

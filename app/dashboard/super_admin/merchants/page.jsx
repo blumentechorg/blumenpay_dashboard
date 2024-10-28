@@ -3,7 +3,7 @@ import { PagaCard, PaystackCard } from "@/components/MerchantCard";
 export default function page() {
   return (
     <>
-      <div className="flex gap-x-10">
+      <div className=" flex flex-wrap gap-x-10 py-10 place-content-center md:place-content-start ">
         <PagaCard />
         <PaystackCard />
       </div>

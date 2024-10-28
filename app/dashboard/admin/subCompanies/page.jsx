@@ -1,4 +1,4 @@
-import SubCompanyCard from "@/components/SubCompanyCard";
+import SubCompanyCard from "@/components/admin/SubCompanyCard";
 import Card from "@/components/Card";
 // import SubCardItems from "@/lib/companycard/SubCardItems";
 

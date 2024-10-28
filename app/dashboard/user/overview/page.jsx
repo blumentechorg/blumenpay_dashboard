@@ -123,8 +123,8 @@ const UserOverView = () => {
       <div>
         <Card />
       </div>
-      <div className="grid lg:grid-cols-3 gap-x-5 gap-y-5 ">
-        <span className=" lg:col-span-2 bg-gray-50 rounded-xl p-5 shadow-md hover:cursor-pointer hover:shadow-lg">
+      <div className="grid md:grid-cols-2  lg:grid-cols-3 gap-x-5 gap-y-5 ">
+        <span className=" lg:col-span-2 bg-gray-50 rounded-xl p-5 shadow-md hover:cursor-pointer hover:shadow-lg w-full min-w-[350px]">
           <div className="flex text-xs space-x-14 pb-2">
             <div className="space-x-5">
               <span className="font-semibold">Total Users</span>

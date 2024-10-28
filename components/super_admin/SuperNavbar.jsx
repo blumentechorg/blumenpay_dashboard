@@ -8,7 +8,7 @@ import CounterClock from "@/public/svg/navbar/CounterClock";
 import Bell from "@/public/svg/navbar/Bell";
 import Search from "@/themes/Search";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import MobileNav from "./MobileNav";
+import SuperMobileNav from "./SuperMobileNav";
 
 export default function Navbar() {
   return (
@@ -17,7 +17,7 @@ export default function Navbar() {
         <div className="flex space-x-3">
           {/* ltr menu */}
           <div className="">
-            <MobileNav />
+            <SuperMobileNav />
           </div>
           <div className="hover:scale-110 transition-transform duration-200">
             <Layout />

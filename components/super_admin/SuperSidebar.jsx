@@ -150,7 +150,7 @@ export default function Sidebar() {
         </div>
 
         {/* Bottom */}
-        <div className=" pb-4">
+        <div className=" pb-4 ">
           <div className="px-5 pt-4 w-full">
             <div className="flex items-center lg:space-x-8 space-x-2">
               <div className="flex space-x-2">

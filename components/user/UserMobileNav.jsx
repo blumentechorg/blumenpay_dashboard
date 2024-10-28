@@ -15,27 +15,39 @@ const MobileNav = () => {
   };
 
   const navItems = [
-    { name: "Overview", icon: <Overview />, link: "/dashboard/overview" },
-    { name: "Companies", icon: <Companies />, link: "/dashboard/companies" },
-    { name: "Customers", icon: <Customers />, link: "/dashboard/customers" },
-    { name: "Merchants", icon: <Merchants />, link: "/dashboard/merchants" },
+    { name: "Overview", icon: <Overview />, link: "/dashboard/user/overview" },
     {
-      name: "Utilities",
+      name: "Companies",
       icon: <Companies />,
-      link: "/dashboard/coreservices/utilities",
+      link: "/dashboard/user/subCompanies",
     },
     {
-      name: "Profile",
+      name: "Customers",
       icon: <Customers />,
-      link: "/dashboard/coreservices/profile",
+      link: "/dashboard/user/customers",
     },
+    {
+      name: "Merchants",
+      icon: <Merchants />,
+      link: "/dashboard/user/merchants",
+    },
+    // {
+    //   name: "Utilities",
+    //   icon: <Companies />,
+    //   link: "/dashboard/user/coreservices/utilities",
+    // },
+    // {
+    //   name: "Profile",
+    //   icon: <Customers />,
+    //   link: "/dashboard/user/coreservices/profile",
+    // },
   ];
 
   return (
     <div className="">
       {/* Hamburger Icon */}
       <button
-        className="text-gray-800  rounded-md focus:outline-none  md:hidden"
+        className="text-gray-800  rounded-md focus:outline-none  lg:hidden"
         onClick={toggleMenu}
       >
         <svg
@@ -56,7 +68,7 @@ const MobileNav = () => {
 
       {/* Modal for Navigation Menu */}
       {isOpen && (
-        <div className="absolute bg-gray-800 mt-4 bg-opacity-75 flex flex-col min-h-screen left-0 w-full items-center justify-center space-y-4 text-white md:hidden">
+        <div className="absolute bg-gray-800 mt-4 bg-opacity-75 flex flex-col min-h-screen left-0 w-full items-center justify-center space-y-4 text-white lg:hidden">
           {navItems.map((item, index) => (
             <Link href={item.link} key={index}>
               <div

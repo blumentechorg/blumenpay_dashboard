@@ -123,21 +123,21 @@ const SuperAdminOverView = () => {
       <div>
         <Card />
       </div>
-      <div className="grid lg:grid-cols-3 gap-x-5 gap-y-5 ">
-        <span className=" lg:col-span-2 bg-gray-50 rounded-xl p-5 shadow-md hover:cursor-pointer hover:shadow-lg">
-          <div className="flex text-xs space-x-14 pb-2">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-x-5 gap-y-5 ">
+        <span className="lg:col-span-2 bg-gray-50 rounded-xl p-5 shadow-md hover:cursor-pointer hover:shadow-lg w-full min-w-[350px]">
+          <div className="flex text-xs space-x-14 pb-2 text-[10px]">
             <div className="space-x-5">
               <span className="font-semibold">Total Users</span>
               <span className="text-gray-500">Total Profits</span>
             </div>
-            <div className="border-l border-gray-400 space-x-10 pl-5 flex">
-              <div className="flex space-x-2 ">
+            <div className="border-l border-gray-400 space-x-10 pl-5 flex text-[10px]">
+              <div className="flex space-x-2">
                 <div className="mt-[6px]">
                   <div className="bg-blue-800 text-xs h-1 w-1 rounded-full"></div>
                 </div>
                 <div>This year</div>
               </div>
-              <div className="flex space-x-2 ">
+              <div className="flex space-x-2">
                 <div className="mt-[6px]">
                   <div className="bg-pink-300 text-xs h-1 w-1 rounded-full"></div>
                 </div>
@@ -147,11 +147,12 @@ const SuperAdminOverView = () => {
           </div>
           <LineChart />
         </span>
-        <span>
+
+        <span className="lg:col-span-1">
           <TrafficWebsite />
         </span>
       </div>
-      <div className="grid lg:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 gap-5">
         <span className="w-full">
           <TopProducts />
         </span>

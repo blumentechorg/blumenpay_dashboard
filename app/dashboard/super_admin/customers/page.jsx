@@ -7,7 +7,7 @@ import CustomerTable from "@/components/CustomerTable";
 
 export default function Customers() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container lg:px-4 py-8">
       <div className="grid gap-y-8">
         <section>
           <CustomerCard />
@@ -16,7 +16,7 @@ export default function Customers() {
           <CustomerTable
             // columnsData={columns}
             // rowData={data}
-            className="w-full text-blue-950"
+            className="w-[350px]  text-blue-950"
           />
         </section>
       </div>

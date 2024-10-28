@@ -66,7 +66,7 @@ export function PagaCard() {
 
 export function BlumenPayCard() {
   return (
-    <div className="grid rounded-3xl bg-gray-50 p-5 text-gray-800 shadow-md w-1/4 place-content-center gap-y-36">
+    <div className="grid rounded-3xl bg-gray-50 p-5 text-gray-800 shadow-md w-[300px] place-content-center gap-y-36">
       <div className="text-3xl font-semibold text-center">BlumenPay</div>
       <div className="flex space-x-4 rounded-2xl w-52 bg-red-50 p-5">
         <div className="h-10 w-10 rounded-full p-3 bg-[#FA5A7D]">

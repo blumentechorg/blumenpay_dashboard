@@ -6,7 +6,7 @@ import DoughnutChart from "./DoughnutChart";
 export default function TrafficLocation() {
   return (
     <div>
-      <div className=" w-full py-6 px-10 rounded-xl font-light bg-[#F7F9FB] hover:cursor-pointer hover:shadow-lg space-y-8 pb-12 lg:text-base md:text-sm text-xs shadow-md h-[300px] ">
+      <div className=" lg:w-full py-6 px-10 rounded-xl font-light bg-[#F7F9FB] hover:cursor-pointer hover:shadow-lg space-y-8 place-content-center  lg:text-base md:text-sm text-xs shadow-md md:h-[325px] h-full w-full min-w-[350px] ">
         <div className=" font-semibold pb-1">Traffic by Location</div>
         <div className="flex flex-row space-x-10">
           <div className="basis-1/3 pt-5">
