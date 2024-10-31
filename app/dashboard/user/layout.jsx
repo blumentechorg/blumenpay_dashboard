@@ -1,7 +1,10 @@
+"use client";
 import ProtectedRoute from "@/components/Auth/ProtectedRoute";
 import Breadcrumb from "@/components/Breadcrumb";
 import UserNavbar from "@/components/user/UserNavbar";
 import UserSidebar from "@/components/user/UserSidebar";
+import Loading from "./loading";
+import { useState, useEffect } from "react";
 
 const UserLayout = ({ children }) => {
   return (

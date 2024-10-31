@@ -67,11 +67,11 @@ export default function Sidebar() {
   ];
 
   const coreServices = [
-    {
-      name: "Utilities",
-      icon: <Companies />,
-      link: "/dashboard/super_admin/coreservices/utilities",
-    },
+    // {
+    //   name: "Utilities",
+    //   icon: <Companies />,
+    //   link: "/dashboard/super_admin/coreservices/utilities",
+    // },
     {
       name: "Profile",
       icon: <Customers />,
