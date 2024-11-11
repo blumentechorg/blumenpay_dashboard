@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import axiosInstance from "@/utils/Auth/axiosInstance";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/images/logo.png";
@@ -12,7 +12,6 @@ import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { users } from "@/app/api/data"; // Import dummy data
 import { userSchema } from "@/Validations/UserValidation";
 
 const SignInForm = () => {
@@ -29,55 +28,31 @@ const SignInForm = () => {
   const { login } = useAuth();
   const router = useRouter();
 
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  // Only render the form when the component has mounted
-  if (!isMounted) {
-    return null;
-  }
-
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      // Find user in dummy data
-      const user = users.find(
-        (u) => u.username === data.username && u.password === data.password
-      );
+      const response = await axiosInstance.post("/custom-user/sign-in/", data);
+      const { token, role } = response.data;
 
-      if (user) {
-        // Store token and role in cookies (adjust this according to your implementation)
-        document.cookie = `token=${user.token}; path=/`;
-        document.cookie = `role=${user.role}; path=/`;
+      login(token, role); // Set token and role in AuthContext
 
-        // Log in user
-        login(user.token);
-        toast.success("Login successful!");
-
-        // Redirect based on user role
-        switch (user.role) {
-          case "super_admin":
-            router.push("/dashboard/super_admin/overview");
-            break;
-          case "admin":
-            router.push("/dashboard/admin/overview");
-            break;
-          case "user":
-            router.push("/dashboard/user/overview");
-            break;
-          default:
-            router.push("/login");
-            break;
-        }
-      } else {
-        throw new Error("Invalid credentials");
+      // Navigate based on role
+      switch (role) {
+        case "Super Admin":
+          router.push("/dashboard/super_admin/overview");
+          break;
+        case "Admin":
+          router.push("/dashboard/admin/overview");
+          break;
+        case "User":
+          router.push("/dashboard/user/overview");
+          break;
+        default:
+          throw new Error("Unknown role");
       }
+      toast.success("Login successful!");
     } catch (error) {
-      console.error("Error during sign-in:", error.message);
-      toast.error("Failed to sign in. Please check your credentials.");
+      toast.error("Login failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -161,7 +136,6 @@ const SignInForm = () => {
             </div>
           </form>
 
-          {/* ToastContainer for showing notifications */}
           <ToastContainer
             position="top-right"
             autoClose={5000}
