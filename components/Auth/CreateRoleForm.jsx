@@ -37,23 +37,26 @@ const CreateRoleForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center  ">
+    <div className="">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg"
+        className="w-full max-w-md p-10 bg-white rounded-2xl shadow-2xl transform transition duration-500 hover:scale-105"
       >
-        <h2 className="text-2xl font-bold mb-6 text-gray-700 text-center">
+        <h2 className="text-3xl font-semibold  mb-8 text-center tracking-wide">
           Create New Role
         </h2>
-        <div className="mb-4">
-          <label className="block text-gray-600 mb-2" htmlFor="name">
+        <div className="mb-6">
+          <label
+            className="block text-gray-600 text-lg font-medium mb-2"
+            htmlFor="name"
+          >
             Role Name
           </label>
           <input
             {...register("name")}
             id="name"
             placeholder="Enter role name"
-            className={`w-full px-4 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-500 ${
+            className={`w-full px-4 py-2 border-2 rounded-lg shadow-sm text-gray-700 focus:outline-none focus:border-indigo-500 transition-colors duration-200 ${
               errors.name ? "border-red-500" : "border-gray-300"
             }`}
           />
@@ -65,7 +68,7 @@ const CreateRoleForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:bg-blue-400 disabled:cursor-not-allowed"
+          className="w-full py-3 px-4 bg-gray-950 hover:bg-gray-900 text-white font-semibold text-lg rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? "Creating Role..." : "Create Role"}
         </button>

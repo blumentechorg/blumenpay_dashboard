@@ -71,36 +71,38 @@ const SignUpForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg"
+      className=" p-6 bg-white rounded-lg shadow-lg"
     >
-      <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+      <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
         Create User Form
       </h2>
 
       {/* First Name */}
-      <div className="mb-4">
-        <input
-          type="text"
-          {...register("first_name")}
-          placeholder="First Name"
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        {errors.first_name && (
-          <p className="text-sm text-red-500">{errors.first_name.message}</p>
-        )}
-      </div>
+      <div className="flex space-x-5">
+        <div className="mb-4">
+          <input
+            type="text"
+            {...register("first_name")}
+            placeholder="First Name"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.first_name && (
+            <p className="text-sm text-red-500">{errors.first_name.message}</p>
+          )}
+        </div>
 
-      {/* Last Name */}
-      <div className="mb-4">
-        <input
-          type="text"
-          {...register("last_name")}
-          placeholder="Last Name"
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        {errors.last_name && (
-          <p className="text-sm text-red-500">{errors.last_name.message}</p>
-        )}
+        {/* Last Name */}
+        <div className="mb-4">
+          <input
+            type="text"
+            {...register("last_name")}
+            placeholder="Last Name"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.last_name && (
+            <p className="text-sm text-red-500">{errors.last_name.message}</p>
+          )}
+        </div>
       </div>
 
       {/* Username */}
@@ -225,7 +227,7 @@ const SignUpForm = () => {
       <button
         type="submit"
         disabled={loading}
-        className="w-full p-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+        className="w-full py-3 px-4 bg-gray-950 hover:bg-gray-900 text-white font-semibold text-lg rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50 disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {loading ? "Signing up..." : "Sign Up"}
       </button>
